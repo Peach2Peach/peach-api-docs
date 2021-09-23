@@ -132,6 +132,7 @@ premium | number | no | Premium in % (default: 0)
 currencies | string | yes | Show offers of specific currency. Can be comma separated list <br />Possible values: `EUR` `CHF` `GBP` `SEK`
 paymentmethods | string | yes | Show offers for specific paymentmethods. Can be comma separated list <br />Possible values: `sepa`
 kyc | boolean | no | If `true`, show KYC offers as well
+returnAddress | string | no | Bitcoin address to return funds to in case of cancellation. If not set, funds will be returned to sender address.
 
 
 ## Get funding status

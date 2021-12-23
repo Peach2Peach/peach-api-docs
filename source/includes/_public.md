@@ -135,6 +135,21 @@ curl "https://api.peachtopeach.com/v1/offer/20219953"
   "kyc": false,
   "rating": 0.75
 }
+{
+  "paymentMethods": [
+    "sepa"
+  ],
+  "currencies": [
+    "EUR"
+  ],
+  "escrow": "bc1qj03pwvza7yeere53pmq97nqdt4skqrquljyz26l9f6ygak9vcrpqkd4lgk",
+  "premium": "5",
+  "kyc": "false",
+  "amount": "1M",
+  "offerId": "9",
+  "returnAddress": "1BitcoinEaterAddressDontSendf59kuE",
+  "type": "bid"
+}
 ```
 
 ### HTTP Request
@@ -166,7 +181,7 @@ curl "https://api.peachtopeach.com/v1/rating/03e448b2397c1880e39853371af5346e7e7
 
 ### HTTP Request
 
-`GET /v1/market/orderbook/rating/:userid`
+`GET /v1/rating/:userid`
 
 
 # Users
@@ -192,5 +207,5 @@ curl "https://api.peachtopeach.com/v1/user/123456789"
 ```
 
 ### HTTP Request
-`GET /v1/market/orderbook/user/:userid`
+`GET /v1/orderbook/user/:userid`
 

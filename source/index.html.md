@@ -10,6 +10,8 @@ toc_footers:
 includes:
   - public
   - private
+  - private-offer
+  - private-contract
   - errors
 
 search: true

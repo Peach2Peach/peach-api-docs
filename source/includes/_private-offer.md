@@ -1,5 +1,4 @@
-#
-Offer
+# Offer
 
 ## List offers
 
@@ -8,16 +7,13 @@ List all offers created by the user.
 Weight: 2
 
 
-``
-`shell
+```shell
 curl -X GET "https://api.peachtopeach.com/v1/offers"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
-`
-``
+```
 
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
 ```json
 [
@@ -64,8 +60,7 @@ The above command returns a response like this:
 ]
 ```
 
-###
-HTTP Request
+### HTTP Request
 
 `GET /v1/offers`
 
@@ -76,8 +71,7 @@ Post a new offer.
 Weight: 1
 
 
-``
-`shell
+```shell
 curl -X POST "https://api.peachtopeach.com/v1/offer/"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
@@ -89,49 +83,32 @@ curl -X POST "https://api.peachtopeach.com/v1/offer/"
   "paymentMethods": ["sepa", "paypal"],
   "kyc": false
 }'
-`
-``
+```
 
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
-  ``
-`json
+```json
 {
   "offerId": 20219953,
 }
-`
-``
+```
 
-###
-HTTP Request
+### HTTP Request
 
-  `POST /v1/offer/`
+`POST /v1/offer/`
 
 ### Parameters
 
 Name | Type | Required | Description
-  -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
-  type | string | yes | `ask`
-or `bid`
-amount | string | yes | Amount in sats < br / > Possible values: `250k`
-`500k`
-`1M`
-`2M`
-`5M`
-premium | number | no | Premium in % (
-  default: 0)
-currencies | string | yes | Show offers of specific currency.Can be comma separated list < br / > Possible values: `EUR`
-`CHF`
-`GBP`
-`SEK`
-paymentMethods | string | yes | Show offers
-for specific payment methods.Can be comma separated list < br / > Possible values: `sepa`
+-- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+type | string | yes | `ask` or `bid`
+amount | string | yes | Amount in sats <br/> Possible values: `250k` `500k` `1M` `2M` `5M`
+premium | number | no | Premium in % (default: 0)
+currencies | string | yes | Show offers of specific currency.Can be comma separated list <br/> Possible values: `EUR` `CHF` `GBP` `SEK`
+paymentMethods | string | yes | Show offers for specific payment methods.Can be comma separated list <br/> Possible values: `sepa`
 kyc | boolean | no | If `true`, show KYC offers as well
-returnAddress | string | no | Bitcoin address to
-return funds to in
-  case ofcancellation.If not set, funds will be returned to sender address.
+returnAddress | string | no | Bitcoin address to return funds to in case ofcancellation.If not set, funds will be returned to sender address.
 
 
 ## Create Escrow
@@ -142,23 +119,19 @@ for offer.
 Weight: 1
 
 
-``
-`shell
+```shell
 curl -X POST "https://api.peachtopeach.com/v1/offer/20219953"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
   "publicKey": "03e448b2397c1880e39853371af5346e7e7972c9d6e26dbbb39ff6c2227aa19c80"
 }'
-`
-``
+```
 
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
-  ``
-`json
+```json
 {
   "offerId": 20219953,
   "escrow": "bc1qc7tswqccdmzxnqych8rm9uam7zav7ufvsnyk72tsynl9vvwt20ssgqe9nz",
@@ -167,21 +140,17 @@ The above command returns a response like this:
     "confirmations": 0
   }
 }
-`
-``
+```
 
-###
-HTTP Request
+### HTTP Request
 
-  `POST /v1/offer/:offerId/escrow`
+`POST /v1/offer/:offerId/escrow`
 
 ### Parameters
 
 Name | Type | Required | Description
-  -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
-  publicKey | string | yes | Seller public key needed
-for verifying seller signature
-for release transaction
+-- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+publicKey | string | yes | Seller public key needed for verifying seller signature for release transaction
 
 
 ## Get funding status
@@ -191,19 +160,15 @@ Get funding status of escrow.
 Weight: 1
 
 
-``
-`shell
+```shell
 curl -X GET "https://api.peachtopeach.com/v1/offer/20219953/escrow"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
-`
-``
+```
 
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
-  ``
-`json
+```json
 {
   "offerId": 20219953,
   "escrow": "bc1qc7tswqccdmzxnqych8rm9uam7zav7ufvsnyk72tsynl9vvwt20ssgqe9nz",
@@ -212,13 +177,53 @@ The above command returns a response like this:
     "confirmations": 0
   }
 }
-`
-``
+```
 
-###
-HTTP Request
+### HTTP Request
 
-  `GET /v1/offer/:offerId/escrow`
+`GET /v1/offer/:offerId/escrow`
+
+
+## Get matches
+
+Get matches for an offer.
+
+Weight: 1
+
+
+```shell
+curl -X GET "https://api.peachtopeach.com/v1/offer/20219953/matches"
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
+```
+
+
+> The above command returns a response like this:
+
+```json
+{
+  "offerId": 20219953,
+  "matches": [{
+    "user": {
+      "id": "03e448b2397c1880e39853371af5346e7e7972c9d6e26dbbb39ff6c2227aa19c80",
+      "rating": 0.7
+    },
+    "price": 954.32,
+    "currency": "EUR"
+  },
+  {
+    "user": {
+      "id": "03e448b2397c1880e39853371af5346e7e7972c9d6e26dbbb39ff6c2227aa19c80",
+      "rating": 0.67
+    },
+    "price": 952.75,
+    "currency": "EUR"
+  }]
+}
+```
+
+### HTTP Request
+
+`GET /v1/offer/:offerId/escrow`
 
 
 ## Update offer
@@ -230,44 +235,32 @@ Only transmitted parameters will be updated, other data will remain untouched.
 Weight: 1
 
 
-``
-`shell
+```shell
 curl -X PATCH "https://api.peachtopeach.com/v1/offer/20219953"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
   "currencies": ["EUR", "CHF"],
 }'
-`
-``
+```
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
-  ``
-`
+```
 200 OK
-`
-``
+```
 
-###
-HTTP Request
+### HTTP Request
 
   `PATCH /v1/offer/:offerId`
 
 ### Parameters
 
 Name | Type | Required | Description
-  -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
-  premium | number | no | Premium in % (
-    default: 0)
-currencies | string | no | Show offers of specific currency.Can be comma separated list < br / > Possible values: `EUR`
-`CHF`
-`GBP`
-`SEK`
-paymentMethods | st
-ring | no | Show offers
-for specific payment methods.Can be comma separated list < br / > Possible values: `sepa`
+-- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+premium | number | no | Premium in % (default: 0)
+currencies | string | no | Show offers of specific currency.Can be comma separated list <br/> Possible values: `EUR` `CHF` `GBP` `SEK`
+paymentMethods | string | no | Show offers for specific payment methods. Can be comma separated list <br/> Possible values: `sepa`
 kyc | boolean | no | If `true`, show KYC offers as well
 
 
@@ -278,24 +271,18 @@ Delete an offer.
 Weight: 1
 
 
-``
-`shell
+```shell
 curl -X DELETE "https://api.peachtopeach.com/v1/offer/20219953"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
-`
-``
+```
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
-  ``
-`
+```
 200 OK
-`
-``
+```
 
-###
-HTTP Request
+### HTTP Request
 
   `PATCH /v1/offer/:offerId`
 
@@ -306,26 +293,20 @@ Accept an offer.
 
 Weight: 1
 
-``
-`shell
+```shell
 curl -X POST "https://api.peachtopeach.com/v1/offer/20219953/accept"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 -H 'Content-Type: application/json' \
-`
-``
+```
 
->
-The above command returns a response like this:
+> The above command returns a response like this:
 
-  ``
-`json
+```json
 {
   "contractId": 12355
 }
-`
-``
+```
 
-###
-HTTP Request
+### HTTP Request
 
-  `POST /v1/offer/:offerId/accept`
+`POST /v1/offer/:offerId/accept`

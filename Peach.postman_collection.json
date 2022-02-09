@@ -1,0 +1,1198 @@
+{
+	"info": {
+		"_postman_id": "461eecfb-db0c-4eed-86c1-909fa2aca1b7",
+		"name": "Peach",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Market",
+					"item": [
+						{
+							"name": "/v1/market/price/:pair",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicKey\":\"02c001e29bf46ba5dbb5fe56810d555202ec6c87a0a484278880bbb3521cf46029\",\n    \"message\":\"Peach Registration 1636471526420\",\n    \"signature\":\"8ac8507f4046b5bcfaca28e62c545dcfe665311d0bc9c88892b0a012d451087d1aaf48afc73b86081574b865dc315285a107f59fbd76882c4651c012b6960374\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/market/price/BTCEUR",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"market",
+										"price",
+										"BTCEUR"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/market/orderbook",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicKey\":\"02c001e29bf46ba5dbb5fe56810d555202ec6c87a0a484278880bbb3521cf46029\",\n    \"message\":\"Peach Registration 1636471526420\",\n    \"signature\":\"8ac8507f4046b5bcfaca28e62c545dcfe665311d0bc9c88892b0a012d451087d1aaf48afc73b86081574b865dc315285a107f59fbd76882c4651c012b6960374\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.1.62:8080/v1/market/orderbook?type=ask&bucket=1M&currencies=EUR,CHF&paymentmethods=sepa,paypal&kyc=false&page=0",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"1",
+										"62"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"market",
+										"orderbook"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "ask"
+										},
+										{
+											"key": "bucket",
+											"value": "1M"
+										},
+										{
+											"key": "currencies",
+											"value": "EUR,CHF"
+										},
+										{
+											"key": "paymentmethods",
+											"value": "sepa,paypal"
+										},
+										{
+											"key": "kyc",
+											"value": "false"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/offer",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offer/9",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offer",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ratings",
+					"item": [
+						{
+							"name": "/v1/rating/:userid",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/rating/032d2cd006ce42bb6ba5d934343cfb526cc396038390a4dc29b08fb8ac571fcfe7",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"rating",
+										"032d2cd006ce42bb6ba5d934343cfb526cc396038390a4dc29b08fb8ac571fcfe7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "/v1/user/:id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicKey\":\"02c001e29bf46ba5dbb5fe56810d555202ec6c87a0a484278880bbb3521cf46029\",\n    \"message\":\"Peach Registration 1636471526420\",\n    \"signature\":\"8ac8507f4046b5bcfaca28e62c545dcfe665311d0bc9c88892b0a012d451087d1aaf48afc73b86081574b865dc315285a107f59fbd76882c4651c012b6960374\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/user/02f691e772b378eaf27e3d3e2ac16bf72512b3d87a836a0c19faa82f923ce40248",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"02f691e772b378eaf27e3d3e2ac16bf72512b3d87a836a0c19faa82f923ce40248"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "System",
+					"item": [
+						{
+							"name": "/v1/system/status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/v1/system/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"system",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Offer",
+					"item": [
+						{
+							"name": "/v1/offer/:offerId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offer/9",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offer",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{accesstoken}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Private",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "/v1/user/auth",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicKey\":\"032d2cd006ce42bb6ba5d934343cfb526cc396038390a4dc29b08fb8ac571fcfe7\",\n    \"message\":\"Peach Registration 1637147041405\",\n    \"signature\":\"1e9b4899e57a28b405a0b01c309e37798d3edad67a2d96da5d8ad18c8546b12637f141b042ba25545300b8aba7b3ef82960081eab9a03a8447527f9eb7cce494\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/user/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"auth"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "/v1/user/gpg",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicKey\":\"032d2cd006ce42bb6ba5d934343cfb526cc396038390a4dc29b08fb8ac571fcfe7\",\n    \"message\":\"Peach Registration 1637147041405\",\n    \"signature\":\"1e9b4899e57a28b405a0b01c309e37798d3edad67a2d96da5d8ad18c8546b12637f141b042ba25545300b8aba7b3ef82960081eab9a03a8447527f9eb7cce494\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/user/gpg",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"gpg"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Offer",
+					"item": [
+						{
+							"name": "Forced errors",
+							"item": [
+								{
+									"name": "/v1/offer 404 NOT_FOUND",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offer/8",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offer",
+												"8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/offer 404 NOT_FOUND",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offer/nonsense",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offer",
+												"nonsense"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/offer 400 FORM_INVALID",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"bid\",\n    \"amount\": \"1M\",\n    \"premium\": 5,\n    \"currencies\": [\"EUR\"],\n    \"paymentMethods\": [\"sepa\", \"paypal\"],\n    \"kyc\": false,\n    \"returnAddress\": \"1BitcoinEaterAddressDontSendf59kuE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offer"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/offer 400 FORM_INVALID Copy",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"bid\",\n    \"amount\": \"1M\",\n    \"premium\": 5,\n    \"currencies\": [\"EUR\"],\n    \"paymentMethods\": [\"sepa\", \"paypal\"],\n    \"kyc\": false,\n    \"returnAddress\": \"1BitcoinEaterAddressDontSendf59kuE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offer"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/offer/:offerid/escrow 400 FORM_INVALID",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"publicKey\": \"invalid\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offer/10/escrow",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offer",
+												"10",
+												"escrow"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "/v1/offers",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/offer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"bid\",\n    \"amount\": \"2M\",\n    \"premium\": 3,\n    \"currencies\": [\"CHF\"],\n    \"paymentMethods\": [\"sepa\"],\n    \"kyc\": true,\n    \"returnAddress\": \"1BitcoinEaterAddressDontSendf59kuE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/offer/:offerId/escrow",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicKey\": \"032d2cd006ce42bb6ba5d934343cfb526cc396038390a4dc29b08fb8ac571fcfe7\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offer/10/escrow",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offer",
+										"10",
+										"escrow"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/v1/offer/:offerId/escrow",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/offer/10/escrow",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"offer",
+										"10",
+										"escrow"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{accesstoken}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Contract",
+					"item": [
+						{
+							"name": "KYC",
+							"item": [
+								{
+									"name": "/v1/contract/:contractId/kyc",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"bid\",\n    \"amount\": \"2M\",\n    \"premium\": 3,\n    \"currencies\": [\"CHF\"],\n    \"paymentMethods\": [\"sepa\"],\n    \"kyc\": true,\n    \"returnAddress\": \"1BitcoinEaterAddressDontSendf59kuE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/offer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"offer"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/contract/:contractId/kyc/accept",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accesstoken",
+												"value": "{{accesstoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"bid\",\n    \"amount\": \"2M\",\n    \"premium\": 3,\n    \"currencies\": [\"CHF\"],\n    \"paymentMethods\": [\"sepa\"],\n    \"kyc\": true,\n    \"returnAddress\": \"1BitcoinEaterAddressDontSendf59kuE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/kyc/accept",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"kyc",
+												"accept"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/contract/:contractId/kyc/celine Copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accesstoken",
+												"value": "{{accesstoken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"bid\",\n    \"amount\": \"2M\",\n    \"premium\": 3,\n    \"currencies\": [\"CHF\"],\n    \"paymentMethods\": [\"sepa\"],\n    \"kyc\": true,\n    \"returnAddress\": \"1BitcoinEaterAddressDontSendf59kuE\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/kyc/decline",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"kyc",
+												"decline"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Payment",
+							"item": [
+								{
+									"name": "/v1/contract/:contractId/payment",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"paymentData\": \"----BEGIN PGP MESSAGE-----\\nVersion: openpgp-mobile\\n\\nwcBMA87af...aVDdeLlS0at\\n4R9lAA==\\n=7wbG\\n-----END PGP MESSAGE-----\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/payment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"payment"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/contract/:contractId/payment",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"paymentData\": \"----BEGIN PGP MESSAGE-----\\nVersion: openpgp-mobile\\n\\nwcBMA87af...aVDdeLlS0at\\n4R9lAA==\\n=7wbG\\n-----END PGP MESSAGE-----\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/payment",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"payment"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/contract/:contractId/payment/confirm",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"paymentData\": \"----BEGIN PGP MESSAGE-----\\nVersion: openpgp-mobile\\n\\nwcBMA87af...aVDdeLlS0at\\n4R9lAA==\\n=7wbG\\n-----END PGP MESSAGE-----\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/payment/confirm",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"payment",
+												"confirm"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Chat",
+							"item": [
+								{
+									"name": "/v1/contract/:contractId/chat",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"paymentData\": \"----BEGIN PGP MESSAGE-----\\nVersion: openpgp-mobile\\n\\nwcBMA87af...aVDdeLlS0at\\n4R9lAA==\\n=7wbG\\n-----END PGP MESSAGE-----\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/chat?to=1639655815836",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"chat"
+											],
+											"query": [
+												{
+													"key": "to",
+													"value": "1639655815836"
+												}
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/v1/contract/:contractId/chat",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"paymentData\": \"----BEGIN PGP MESSAGE-----\\nVersion: openpgp-mobile\\n\\nwcBMA87af...aVDdeLlS0at\\n4R9lAA==\\n=7wbG\\n-----END PGP MESSAGE-----\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/chat",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"chat"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Dispute",
+							"item": [
+								{
+									"name": "/v1/contract/:contractId/dispute",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"paymentData\": \"----BEGIN PGP MESSAGE-----\\nVersion: openpgp-mobile\\n\\nwcBMA87af...aVDdeLlS0at\\n4R9lAA==\\n=7wbG\\n-----END PGP MESSAGE-----\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/v1/contract/:contractId/dispute",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"v1",
+												"contract",
+												":contractId",
+												"dispute"
+											],
+											"variable": [
+												{
+													"key": "contractId",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let baseUrl = pm.collectionVariables.get('baseUrl')",
+							"let httpAuth = {",
+							"  user: pm.collectionVariables.get('httpauthuser'),",
+							"  pass: pm.collectionVariables.get('httpauthpw')",
+							"}",
+							"let accessToken = pm.collectionVariables.get('accesstoken')",
+							"let now = (new Date()).getTime()",
+							"let expiryTime = ",
+							"  !!pm.collectionVariables.get('expiry')",
+							"  ? Number(pm.collectionVariables.get('expiry'))",
+							"  : now",
+							"",
+							"const postRequest = {",
+							"    url: baseUrl + '/v1/user/auth',",
+							"    method: 'POST',",
+							"    header: {",
+							"      'Content-Type': 'application/json'",
+							"    },",
+							"    body: {",
+							"      mode: 'raw',",
+							"      raw: JSON.stringify({",
+							"        'publicKey': '032d2cd006ce42bb6ba5d934343cfb526cc396038390a4dc29b08fb8ac571fcfe7',",
+							"        'message': 'Peach Registration 1637147041405',",
+							"        'signature': '1e9b4899e57a28b405a0b01c309e37798d3edad67a2d96da5d8ad18c8546b12637f141b042ba25545300b8aba7b3ef82960081eab9a03a8447527f9eb7cce494'",
+							"    })",
+							"  }",
+							"}",
+							"",
+							"if (!accessToken || expiryTime - now < 30 * 1000) {",
+							"  pm.sendRequest(postRequest, (error, response) => {",
+							"    if (error) {",
+							"      console.log(error)",
+							"      return",
+							"    }",
+							"    pm.collectionVariables.set('accesstoken', response.json().accessToken)",
+							"    pm.collectionVariables.set('expiry', response.json().expiry)",
+							"  })",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "http://192.168.1.62:8080/v1/user/register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/Users/czino/Desktop/Screenshot 2021-09-13 at 12.54.21.png"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1//kyc/20219953",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"",
+						"kyc",
+						"20219953"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://192.168.1.62:8080"
+		},
+		{
+			"key": "accesstoken",
+			"value": ""
+		},
+		{
+			"key": "expiry",
+			"value": ""
+		},
+		{
+			"key": "httpauthuser",
+			"value": "HTTPAUTHUSER"
+		},
+		{
+			"key": "httpauthpw",
+			"value": "HTTPAUTHPW"
+		}
+	]
+}

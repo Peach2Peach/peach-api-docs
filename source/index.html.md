@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://peachtopeach.com/'>🍑</a>
+  - <a href='https://peachbitcoin.com/'>🍑</a>
 
 includes:
   - public

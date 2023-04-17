@@ -1,11 +1,6 @@
-# Contract
-
-## Send KYC
-
+## Contract
+### Send KYC
 Buyer: send KYC information
-
-
-
 
 ```shell
 curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc"
@@ -16,19 +11,16 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc"
 -F '=@"kyc-image.png"'
 ```
 
-
 > The above command returns a response like this:
 
 ```
 200 OK
 ```
 
-### HTTP Request
-
+#### HTTP Request
 `POST /v1/contract/:contractId/kyc`
 
-### Parameters
-
+#### Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 name | string | yes/no | Real name of user
@@ -36,52 +28,7 @@ data | string | yes/no | Additional data such as IBAN
 file | image | yes/no | Image of Government ID if required
 
 
-## Accept KYC
-
-Seller: Accept KYC information
-
-
-
-```shell
-curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc/accept"
--H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
-```
-
-> The above command returns a response like this:
-
-```
-200 OK
-```
-
-### HTTP Request
-
-`POST /v1/contract/:contractId/kyc/accept`
-
-
-## Decline KYC
-
-Seller: Decline KYC in case of invalid or unreadable data.
-
-
-
-```shell
-curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc/decline"
--H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
-```
-
-> The above command returns a response like this:
-
-```
-200 OK
-```
-
-### HTTP Request
-
-`POST /v1/contract/:contractId/kyc/decline`
-
-
-## Send Payment Data
-
+### Send Payment Data
 Seller: Send payment instructions to buyer.
 
 
@@ -100,20 +47,17 @@ curl -X PUT "https://api.peachtopeach.com/v1/contract/12355/payment"
 200 OK
 ```
 
-### HTTP Request
+#### HTTP Request
 
 `POST /v1/contract/:contractId/payment`
-### Parameters
+#### Parameters
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 paymentData | string | yes | Send encrypted payment data
 
-## Payment made
-
+### Payment made
 Buyer: confirm that payment has been made.
-
-
 
 ```shell
 curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment"
@@ -126,15 +70,12 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment"
 200 OK
 ```
 
-### HTTP Request
-
+#### HTTP Request
 `POST /v1/contract/:contractId/payment`
 
 
-## Confirm Payment Received
-
+### Confirm Payment Received
 Confirm a payment has been made.
-
 
 ```shell
 curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment/confirm"
@@ -147,15 +88,11 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment/confirm"
 200 OK
 ```
 
-### HTTP Request
-
+#### HTTP Request
 `POST /v1/contract/:contractId/payment/confirm`
 
-## Chat log
-
+### Chat log
 Receive chat history. Specificy end date as unix timestamp and receive the last 50 messages from that point.
-
-
 
 ```shell
 curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
@@ -182,22 +119,17 @@ curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
 ]
 ```
 
-### HTTP Request
-
+#### HTTP Request
 `GET /v1/contract/:contractId/chat`
 
-### Parameters
-
+#### Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 to | number | no | unix timestamp to
 
 
-## Post chat message
-
+### Post chat message
 Send a message via chat
-
-
 
 ```shell
 curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
@@ -213,23 +145,18 @@ curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
 200 OK
 ```
 
-### HTTP Request
-
+#### HTTP Request
 `POST /v1/contract/:contractId/chat`
 
-### Parameters
-
+#### Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 message | string | yes | The message to be sent
 peachOnly | boolean | no | If true, only Peach Support Team can read the message
 attachment | image | no | Image to attach
 
-## Start a dispute
-
+### Start a dispute
 Start a dispute
-
-
 
 ```shell
 curl -X GET "https://api.peachtopeach.com/v1/contract/12355/dispute"
@@ -242,6 +169,5 @@ curl -X GET "https://api.peachtopeach.com/v1/contract/12355/dispute"
 200 OK
 ```
 
-### HTTP Request
-
+#### HTTP Request
 `POST /v1/contract/:contractId/dispute`

@@ -1,6 +1,6 @@
 # Private API
 
-# Authentication
+## Authentication
 
 Private API endpoints are used to access user specific resources.
 
@@ -9,7 +9,7 @@ Auth tokens can be acquired by authentication of public keys.
 
 When successfully requesting a token, the public key is automatically registered if it does not exist in the system.
 
-## Get token
+### Get token
 
 Use this endpoint to get auth token by sending public key, challenge and signed message.
 When requesting the token, it is recommended to add a random nonce to the message to decrease potential attack vectors.
@@ -19,7 +19,7 @@ The received token is valid for 60 minutes.
 
 
 ```shell
-# Example request here
+## Example request here
 curl -X POST "https://api.peachtopeach.com/v1/user/auth/"
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -38,11 +38,11 @@ curl -X POST "https://api.peachtopeach.com/v1/user/auth/"
 }
 ```
 
-### HTTP Request
+#### HTTP Request
 
 `POST /v1/user/auth/`
 
-### Parameters
+#### Parameters
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
@@ -50,9 +50,9 @@ publicKey | string | yes | Public key of user account (recommended to use 1st pu
 message | string | yes | Message to sign. Recommended to add random nonce.
 signature | string | yes | Signature of message, message is hashed by SHA256 algorithm.<br/>Used to verify user is indeed owner of private key which is associate to the public key
 
-# Profile
+## Profile
 
-## Get token
+### Get token
 
 Use this endpoint to get auth token by sending public key, challenge and signed message.
 When requesting the token, it is recommended to add a random nonce to the message to decrease potential attack vectors.
@@ -62,7 +62,7 @@ The received token is valid for 60 minutes.
 
 
 ```shell
-# Example request here
+## Example request here
 curl -X POST "https://api.peachtopeach.com/v1/user/auth/"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 --data-raw '-----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -77,6 +77,6 @@ mQINBGF...
 200 OK
 ```
 
-### HTTP Request
+#### HTTP Request
 
 `PUT /v1/user/gpg/`

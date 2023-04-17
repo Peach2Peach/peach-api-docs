@@ -9,9 +9,13 @@ toc_footers:
 
 includes:
   - public
+  - public/system
+  - public/market
+  - public/users
+  - public/ratings
   - private
-  - private-offer
-  - private-contract
+  - private/offer
+  - private/contract
   - errors
 
 search: true

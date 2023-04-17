@@ -6,7 +6,6 @@
 
 Get system status related information.
 
-Weight: 1
 
 ```shell
 curl "https://api.peachtopeach.com/v1/system/status"
@@ -30,7 +29,6 @@ curl "https://api.peachtopeach.com/v1/system/status"
 
 Get average market price of given pair
 
-Weight: 1
 
 
 ```shell
@@ -55,7 +53,6 @@ curl "https://api.peachtopeach.com/v1/market/BTCEUR"
 
 Get the order book for a given pair. bucket.
 
-Weight: 2
 
 
 ```shell
@@ -112,7 +109,6 @@ page | number | no | Paginate results, each page shows 100 offers
 
 Get information of an offer.
 
-Weight: 1
 
 
 ```shell
@@ -163,7 +159,6 @@ Detailed ratings can be called separately.
 
 Get public rating information
 
-Weight: 1
 
 
 ```shell
@@ -190,7 +185,6 @@ curl "https://api.peachtopeach.com/v1/rating/03e448b2397c1880e39853371af5346e7e7
 
 Get public user information
 
-Weight: 1
 
 
 ```shell

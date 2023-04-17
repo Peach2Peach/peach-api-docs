@@ -4,7 +4,6 @@
 
 List all offers created by the user.
 
-Weight: 2
 
 
 ```shell
@@ -68,7 +67,6 @@ curl -X GET "https://api.peachtopeach.com/v1/offers"
 
 Post a new offer.
 
-Weight: 1
 
 
 ```shell
@@ -116,7 +114,6 @@ returnAddress | string | no | Bitcoin address to return funds to in case ofcance
 Post a create escrow
 for offer.
 
-Weight: 1
 
 
 ```shell
@@ -157,7 +154,6 @@ publicKey | string | yes | Seller public key needed for verifying seller signatu
 
 Get funding status of escrow.
 
-Weight: 1
 
 
 ```shell
@@ -188,7 +184,6 @@ curl -X GET "https://api.peachtopeach.com/v1/offer/20219953/escrow"
 
 Get matches for an offer.
 
-Weight: 1
 
 
 ```shell
@@ -232,7 +227,6 @@ Update an offer.
 
 Only transmitted parameters will be updated, other data will remain untouched.
 
-Weight: 1
 
 
 ```shell
@@ -268,7 +262,6 @@ kyc | boolean | no | If `true`, show KYC offers as well
 
 Delete an offer.
 
-Weight: 1
 
 
 ```shell
@@ -291,7 +284,6 @@ curl -X DELETE "https://api.peachtopeach.com/v1/offer/20219953"
 
 Accept an offer.
 
-Weight: 1
 
 ```shell
 curl -X POST "https://api.peachtopeach.com/v1/offer/20219953/accept"

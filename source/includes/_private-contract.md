@@ -5,7 +5,6 @@
 Buyer: send KYC information
 
 
-Weight: 1
 
 
 ```shell
@@ -41,7 +40,6 @@ file | image | yes/no | Image of Government ID if required
 
 Seller: Accept KYC information
 
-Weight: 1
 
 
 ```shell
@@ -64,7 +62,6 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc/accept"
 
 Seller: Decline KYC in case of invalid or unreadable data.
 
-Weight: 1
 
 
 ```shell
@@ -87,7 +84,6 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc/decline"
 
 Seller: Send payment instructions to buyer.
 
-Weight: 1
 
 ```shell
 curl -X PUT "https://api.peachtopeach.com/v1/contract/12355/payment"
@@ -117,7 +113,6 @@ paymentData | string | yes | Send encrypted payment data
 
 Buyer: confirm that payment has been made.
 
-Weight: 1
 
 
 ```shell
@@ -140,7 +135,6 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment"
 
 Confirm a payment has been made.
 
-Weight: 1
 
 ```shell
 curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment/confirm"
@@ -161,7 +155,6 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment/confirm"
 
 Receive chat history. Specificy end date as unix timestamp and receive the last 50 messages from that point.
 
-Weight: 1
 
 
 ```shell
@@ -204,7 +197,6 @@ to | number | no | unix timestamp to
 
 Send a message via chat
 
-Weight: 1
 
 
 ```shell
@@ -237,7 +229,6 @@ attachment | image | no | Image to attach
 
 Start a dispute
 
-Weight: 1
 
 
 ```shell

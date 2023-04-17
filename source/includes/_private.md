@@ -16,7 +16,6 @@ When requesting the token, it is recommended to add a random nonce to the messag
 
 The received token is valid for 60 minutes.
 
-Weight: 1
 
 
 ```shell
@@ -60,7 +59,6 @@ When requesting the token, it is recommended to add a random nonce to the messag
 
 The received token is valid for 60 minutes.
 
-Weight: 1
 
 
 ```shell

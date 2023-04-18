@@ -5,7 +5,7 @@ List all offers created by the user.
 
 
 ```shell
-curl -X GET "https://api.peachtopeach.com/v1/offers"
+curl -X GET "https://api.peachbitcoin.com/v1/offers"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 ```
 
@@ -22,7 +22,6 @@ curl -X GET "https://api.peachtopeach.com/v1/offers"
       "CHF"
     ],
     "type": "bid",
-    "kyc": "true",
     "premium": "3",
     "offerId": "11",
     "amount": "2M",
@@ -45,7 +44,6 @@ curl -X GET "https://api.peachtopeach.com/v1/offers"
     ],
     "escrow": "bc1qh74f9595lc4cm0yt43snxargjyqf4dkx3dvyr7gdfchenwxpv67s3q6ud0",
     "premium": "5",
-    "kyc": "false",
     "returnAddress": "1BitcoinEaterAddressDontSendf59kuE",
     "type": "bid",
     "funding": {
@@ -64,7 +62,7 @@ curl -X GET "https://api.peachtopeach.com/v1/offers"
 Post a new offer.
 
 ```shell
-curl -X POST "https://api.peachtopeach.com/v1/offer/"
+curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -73,7 +71,6 @@ curl -X POST "https://api.peachtopeach.com/v1/offer/"
   "premium: 5,
   "currencies": ["EUR"],
   "paymentMethods": ["sepa", "paypal"],
-  "kyc": false
 }'
 ```
 
@@ -89,7 +86,7 @@ curl -X POST "https://api.peachtopeach.com/v1/offer/"
 #### HTTP Request
 `POST /v1/offer/`
 
-#### Parameters
+#### Body Parameters
 Name | Type | Required | Description
 -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
 type | string | yes | `ask` or `bid`
@@ -97,7 +94,6 @@ amount | string | yes | Amount in sats <br/> Possible values: `250k` `500k` `1M`
 premium | number | no | Premium in % (default: 0)
 currencies | string | yes | Show offers of specific currency.Can be comma separated list <br/> Possible values: `EUR` `CHF` `GBP` `SEK`
 paymentMethods | string | yes | Show offers for specific payment methods.Can be comma separated list <br/> Possible values: `sepa`
-kyc | boolean | no | If `true`, show KYC offers as well
 returnAddress | string | no | Bitcoin address to return funds to in case ofcancellation.If not set, funds will be returned to sender address.
 
 
@@ -106,7 +102,7 @@ Post a create escrow
 for offer.
 
 ```shell
-curl -X POST "https://api.peachtopeach.com/v1/offer/20219953"
+curl -X POST "https://api.peachbitcoin.com/v1/offer/20219953"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -130,7 +126,7 @@ curl -X POST "https://api.peachtopeach.com/v1/offer/20219953"
 #### HTTP Request
 `POST /v1/offer/:offerId/escrow`
 
-#### Parameters
+#### Body Parameters
 Name | Type | Required | Description
 -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
 publicKey | string | yes | Seller public key needed for verifying seller signature for release transaction
@@ -140,7 +136,7 @@ publicKey | string | yes | Seller public key needed for verifying seller signatu
 Get funding status of escrow.
 
 ```shell
-curl -X GET "https://api.peachtopeach.com/v1/offer/20219953/escrow"
+curl -X GET "https://api.peachbitcoin.com/v1/offer/20219953/escrow"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 ```
 
@@ -165,7 +161,7 @@ curl -X GET "https://api.peachtopeach.com/v1/offer/20219953/escrow"
 Get matches for an offer.
 
 ```shell
-curl -X GET "https://api.peachtopeach.com/v1/offer/20219953/matches"
+curl -X GET "https://api.peachbitcoin.com/v1/offer/20219953/matches"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 ```
 
@@ -203,7 +199,7 @@ Update an offer.
 Only transmitted parameters will be updated, other data will remain untouched.
 
 ```shell
-curl -X PATCH "https://api.peachtopeach.com/v1/offer/20219953"
+curl -X PATCH "https://api.peachbitcoin.com/v1/offer/20219953"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -220,20 +216,19 @@ curl -X PATCH "https://api.peachtopeach.com/v1/offer/20219953"
 #### HTTP Request
 `PATCH /v1/offer/:offerId`
 
-#### Parameters
+#### Body Parameters
 Name | Type | Required | Description
 -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
 premium | number | no | Premium in % (default: 0)
 currencies | string | no | Show offers of specific currency.Can be comma separated list <br/> Possible values: `EUR` `CHF` `GBP` `SEK`
 paymentMethods | string | no | Show offers for specific payment methods. Can be comma separated list <br/> Possible values: `sepa`
-kyc | boolean | no | If `true`, show KYC offers as well
 
 
 ### Delete offer
 Delete an offer.
 
 ```shell
-curl -X DELETE "https://api.peachtopeach.com/v1/offer/20219953"
+curl -X DELETE "https://api.peachbitcoin.com/v1/offer/20219953"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -251,7 +246,7 @@ curl -X DELETE "https://api.peachtopeach.com/v1/offer/20219953"
 Accept an offer.
 
 ```shell
-curl -X POST "https://api.peachtopeach.com/v1/offer/20219953/accept"
+curl -X POST "https://api.peachbitcoin.com/v1/offer/20219953/accept"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 -H 'Content-Type: application/json' \
 ```

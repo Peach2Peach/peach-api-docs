@@ -1,39 +1,11 @@
 ## Contract
-### Send KYC
-Buyer: send KYC information
-
-```shell
-curl -X POST "https://api.peachtopeach.com/v1/contract/12355/kyc"
--H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
--H 'Content-Type: multipart/form-data' \
--F 'name="Hal Finney "' \
--F 'data="IBAN Number"' \
--F '=@"kyc-image.png"'
-```
-
-> The above command returns a response like this:
-
-```
-200 OK
-```
-
-#### HTTP Request
-`POST /v1/contract/:contractId/kyc`
-
-#### Parameters
-Name | Type | Required | Description
---------- | ----------- | ----------- | -----------
-name | string | yes/no | Real name of user
-data | string | yes/no | Additional data such as IBAN
-file | image | yes/no | Image of Government ID if required
-
 
 ### Send Payment Data
 Seller: Send payment instructions to buyer.
 
 
 ```shell
-curl -X PUT "https://api.peachtopeach.com/v1/contract/12355/payment"
+curl -X PUT "https://api.peachbitcoin.com/v1/contract/12355/payment"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -50,7 +22,7 @@ curl -X PUT "https://api.peachtopeach.com/v1/contract/12355/payment"
 #### HTTP Request
 
 `POST /v1/contract/:contractId/payment`
-#### Parameters
+#### Body Parameters
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
@@ -60,7 +32,7 @@ paymentData | string | yes | Send encrypted payment data
 Buyer: confirm that payment has been made.
 
 ```shell
-curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment"
+curl -X POST "https://api.peachbitcoin.com/v1/contract/12355/payment"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -78,7 +50,7 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment"
 Confirm a payment has been made.
 
 ```shell
-curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment/confirm"
+curl -X POST "https://api.peachbitcoin.com/v1/contract/12355/payment/confirm"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -95,7 +67,7 @@ curl -X POST "https://api.peachtopeach.com/v1/contract/12355/payment/confirm"
 Receive chat history. Specificy end date as unix timestamp and receive the last 50 messages from that point.
 
 ```shell
-curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
+curl -X GET "https://api.peachbitcoin.com/v1/contract/12355/chat"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json'
 ```
@@ -122,7 +94,7 @@ curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
 #### HTTP Request
 `GET /v1/contract/:contractId/chat`
 
-#### Parameters
+#### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 to | number | no | unix timestamp to
@@ -132,7 +104,7 @@ to | number | no | unix timestamp to
 Send a message via chat
 
 ```shell
-curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
+curl -X GET "https://api.peachbitcoin.com/v1/contract/12355/chat"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: multipart/form-data' \
 -F 'message="Here is the proof of payment "' \
@@ -148,7 +120,7 @@ curl -X GET "https://api.peachtopeach.com/v1/contract/12355/chat"
 #### HTTP Request
 `POST /v1/contract/:contractId/chat`
 
-#### Parameters
+#### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 message | string | yes | The message to be sent
@@ -159,7 +131,7 @@ attachment | image | no | Image to attach
 Start a dispute
 
 ```shell
-curl -X GET "https://api.peachtopeach.com/v1/contract/12355/dispute"
+curl -X GET "https://api.peachbitcoin.com/v1/contract/12355/dispute"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 ```
 

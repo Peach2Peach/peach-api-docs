@@ -20,7 +20,7 @@ The received token is valid for 60 minutes.
 
 ```shell
 ## Example request here
-curl -X POST "https://api.peachtopeach.com/v1/user/auth/"
+curl -X POST "https://api.peachbitcoin.com/v1/user/auth/"
 -H 'Content-Type: application/json' \
 --data-raw '{
     "publicKey": "03e448b2397c1880e39853371af5346e7e7972c9d6e26dbbb39ff6c2227aa19c80",
@@ -42,7 +42,7 @@ curl -X POST "https://api.peachtopeach.com/v1/user/auth/"
 
 `POST /v1/user/auth/`
 
-#### Parameters
+#### Body Parameters
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
@@ -63,7 +63,7 @@ The received token is valid for 60 minutes.
 
 ```shell
 ## Example request here
-curl -X POST "https://api.peachtopeach.com/v1/user/auth/"
+curl -X POST "https://api.peachbitcoin.com/v1/user/auth/"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 --data-raw '-----BEGIN PGP PUBLIC KEY BLOCK-----
 mQINBGF...

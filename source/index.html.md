@@ -11,8 +11,8 @@ includes:
   - public
   - public/system
   - public/market
-  - public/users
-  - public/ratings
+  - public/user
+  - public/contact
   - private
   - private/offer
   - private/contract

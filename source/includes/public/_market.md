@@ -1,9 +1,9 @@
 ## Market
-#### Market price
+### Market price
 Get average market price of given pair
 
 ```shell
-curl "https://api.peachtopeach.com/v1/market/BTCEUR"
+curl "https://api.peachbitcoin.com/v1/market/price/BTCEUR"
 ```
 
 > The above command returns JSON structured like this:
@@ -11,100 +11,39 @@ curl "https://api.peachtopeach.com/v1/market/BTCEUR"
 ```json
 {
   "pair": "BTCEUR",
-  "price": 40503.32
+  "price": 27455.04,
+  "date": "2023-04-18T15:28:35.525Z"
 }
 ```
 
-##### HTTP Request
+#### HTTP Request
 `GET /v1/market/price/:pair/`
 
-#### Order book
-Get the order book for a given pair. bucket.
+### Market prices
+Get average market prices of all trading pairs
 
 ```shell
-curl "https://api.peachtopeach.com/v1/market/orderbook"
+curl "https://api.peachbitcoin.com/v1/market/prices"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "offerId": 20219948,
-    "amount": 1000000,
-    "prices": {
-      "EUR": 40563.34,
-      "CHF": 44332.08
-    },
-    "rating": 0.75,
-    "kyc": false
-  },
-  {
-    "offerId": 20219953,
-    "amount": 1000000,
-    "prices": {
-      "EUR": 40863.34
-    },
-    "rating": 0.85,
-    "kyc": false
-  },
-  ...
-],
-
-```
-##### HTTP Request
-`GET /v1/market/orderbook/?type=ask&bucket=1M&currencies=EUR,CHF&paymentmethods=sepa,paypal&kyc=false&page=0`
-
-
-##### URL Parameters
-Name | Type | Required | Description
---------- | ----------- | ----------- | -----------
-type | string | yes | `ask` or `bid`
-amount | string | yes | Amount in sats <br/> Possible values: `250k` `500k` `1M` `2M` `5M`
-currencies | string | yes | Show offers of specific currency. Can be comma separated list <br />Possible values: `EUR` `CHF` `GBP` `SEK`
-paymentmethods | string | yes | Show offers for specific paymentmethods. Can be comma separated list <br />Possible values: `sepa`
-kyc | boolean | no | If true, show KYC offers as well
-page | number | no | Paginate results, each page shows 100 offers
-
-#### Get offer
-Get information of an offer.
-
-```shell
-curl "https://api.peachtopeach.com/v1/offer/20219953"
-```
-
-> The above command returns a response like this:
-
-```json
 {
-  "offerId": 20219953,
-  "type": "ask",
-  "amount": 1000000,
-  "prices": {
-    "EUR": 40563.34,
-    "CHF": 44332.08
-  },
-  "currencies": ["EUR"],
-  "paymentMethods": ["sepa", "paypal"],
-  "kyc": false,
-  "rating": 0.75
-}
-{
-  "paymentMethods": [
-    "sepa"
-  ],
-  "currencies": [
-    "EUR"
-  ],
-  "escrow": "bc1qj03pwvza7yeere53pmq97nqdt4skqrquljyz26l9f6ygak9vcrpqkd4lgk",
-  "premium": "5",
-  "kyc": "false",
-  "amount": "1M",
-  "offerId": "9",
-  "returnAddress": "1BitcoinEaterAddressDontSendf59kuE",
-  "type": "bid"
+  "EUR": 27498.77,
+  "CHF": 27191.85,
+  "GBP": 24226.61,
+  "CZK": 642058.31,
+  "DKK": 204269.47,
+  "HUF": 10183871.09,
+  "PLN": 127195.74,
+  "NOK": 315166.26,
+  "SEK": 309890.83,
+  "BGN": 53293.11,
+  "ISK": 4098123.85,
+  "RON": 135766.28
 }
 ```
 
-##### HTTP Request
-`GET /v1/offer/:offerId`
+#### HTTP Request
+`GET /v1/market/prices`

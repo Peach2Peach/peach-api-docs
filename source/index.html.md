@@ -14,6 +14,8 @@ includes:
   - public/user
   - public/contact
   - private
+  - private/authentication
+  - private/user
   - private/offer
   - private/contract
   - errors

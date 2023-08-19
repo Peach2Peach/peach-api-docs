@@ -1,5 +1,5 @@
 
-## Authentication
+# Authentication
 
 Private API endpoints are used to access user specific resources.
 
@@ -8,7 +8,7 @@ Auth tokens can be acquired by authentication of public keys.
 
 When successfully requesting a token, the public key is automatically registered if it does not exist in the system.
 
-### Get token
+## Get token
 
 Use this endpoint to get auth token by sending public key, challenge and signed message.
 The received token is valid for 60 minutes.
@@ -34,11 +34,11 @@ curl -X POST "https://api.peachbitcoin.com/v1/user/auth/"
 }
 ```
 
-#### HTTP Request
+### HTTP Request
 
 `POST /v1/user/auth/`
 
-#### Body Parameters
+### Body Parameters
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------

@@ -1,9 +1,9 @@
-## Contact
-### Report
+# Contact
+## Report
 Send a report to customer support
 
 ```shell
-curl "https://api.peachbitcoin.com/v1/contact/report"
+curl https://api.peachbitcoin.com/v1/contact/report
 ```
 
 > The above command returns JSON structured like this:
@@ -14,10 +14,10 @@ curl "https://api.peachbitcoin.com/v1/contact/report"
 }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contact/report`
 
-#### Body Parameters
+### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 email | string | yes | Your email to get in touch with

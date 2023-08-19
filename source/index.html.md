@@ -8,12 +8,10 @@ toc_footers:
   - <a href='https://peachbitcoin.com/'>🍑</a>
 
 includes:
-  - public
   - public/system
   - public/market
   - public/user
   - public/contact
-  - private
   - private/authentication
   - private/user
   - private/offer

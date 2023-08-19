@@ -1,6 +1,6 @@
-## Contract
+# Contract (Private)
 
-### Contract Details
+## Contract Details
 Get details of a specific contract
 
 ```shell
@@ -66,11 +66,10 @@ curl https://api.peachbitcoin.com/v1/contract/123-456
 }
 ```
 
-#### HTTP Request
+### HTTP Request
 `GET /v1/contract/:contractId`
 
-
-### Contract Summaries
+## Contract Summaries
 Get summaries of a all user contracts
 
 ```shell
@@ -110,10 +109,10 @@ curl https://api.peachbitcoin.com/v1/contracts/summary
 }]
 ```
 
-#### HTTP Request
+### HTTP Request
 `GET /v1/contracts/summary`
 
-### Contracts
+## Contracts
 Get details of a all user contracts
 
 ```shell
@@ -179,12 +178,12 @@ curl https://api.peachbitcoin.com/v1/contracts
 }]
 ```
 
-#### HTTP Request
+### HTTP Request
 `GET /v1/contracts`
 
 
 
-### Payment Made
+## Payment Made
 Buyer: confirm that payment has been made.
 
 ```shell
@@ -198,11 +197,11 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/payment/confirm"
 { "success": true}
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/payment/confirm`
 
 
-### Confirm Payment Received
+## Confirm Payment Received
 Confirm a payment has been made.
 
 ```shell
@@ -216,12 +215,12 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/payment/confirm"
 { "txId": "24efff...46164" }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/payment/confirm`
 
 
 
-### Rate Counterparty
+## Rate Counterparty
 After a trade has been completed, you can rate your counterparty.
 
 ```shell
@@ -235,11 +234,11 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/user/rate"
 { "success": true }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/user/rate`
 
 
-#### Body Parameters
+### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 rating | -1 / 1 | yes | The rating to give your counterparty. -1 = 👎 and 1 = 👍
@@ -247,7 +246,7 @@ signature | string | yes | The signature of the sha256 hash of the counter party
 
 
 
-### Cancel Contract
+## Cancel Contract
 Cancels a contract as long as payment has not yet been made or at any time during cash trades. You cannot cancel while a dispute is active.
 
 As a seller, this will request contract cancelation unless it's a cash trade or the time to make the payment has run out for the buyer.
@@ -270,11 +269,11 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/cancel"
 { "psbt": "cHNidP8...sAAAA" }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/cancel`
 
 
-### Confirm Cancelation Request
+## Confirm Cancelation Request
 After a seller requests cancelation, this endpoint will confirm and effectively cancel the contract.
 
 ```shell
@@ -289,12 +288,12 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/cancel/confirm"
 ```
 
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/cancel/confirm`
 
 
 
-### Reject Cancelation Request
+## Reject Cancelation Request
 After a seller requests cancelation, this endpoint will reject the request and the trade will continue
 
 ```shell
@@ -309,11 +308,11 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/cancel/reject"
 ```
 
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/cancel/reject`
 
 
-### Extend Payment Time
+## Extend Payment Time
 As a seller you have to wait up to 12 hours for the buyer to claim that the payment has been made. After this time runs out, you have the choice to extend the time or cancel the trade. This endpoint allows you to extend the timer by another 12 hours
 
 ```shell
@@ -328,11 +327,11 @@ curl -X PATCH "https://api.peachbitcoin.com/v1/contract/123-456/cancel/extendTim
 ```
 
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/cancel/extendTime`
 
 
-### Chat Log
+## Chat Log
 Receive chat history.
 
 ```shell
@@ -363,16 +362,16 @@ curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/chat"
 ]
 ```
 
-#### HTTP Request
+### HTTP Request
 `GET /v1/contract/:contractId/chat`
 
-#### Query Parameters
+### Query Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 page | number | no | The page of the chat history. Each page contains 21 messages
 
 
-### Post Chat Message
+## Post Chat Message
 Send a message via chat
 
 ```shell
@@ -388,16 +387,16 @@ curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/chat"
 { "success": true }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/chat`
 
-#### Body Parameters
+### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 message | string | yes | The message to be sent (encrypted with `symmetricKey`)
 signature | string | yes | The PGP signature of the message
 
-### Set Chat Message Read
+## Set Chat Message Read
 Tell server that messages have been read
 
 ```shell
@@ -411,16 +410,16 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/chat/received"
 { "success": true }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/chat/received`
 
-#### Body Parameters
+### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 start | number | yes | The starting index of read messages
 end | number | yes | The last index of read messages
 
-### Raise a Dispute
+## Raise a Dispute
 Raise a dispute
 
 ```shell
@@ -434,10 +433,10 @@ curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/dispute"
 { "success": true }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/dispute`
 
-#### Body Parameters
+### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 email | string | depends | The email to get in touch with, required when reason is `noPayment.seller` or `noPayment.buyer`
@@ -447,7 +446,7 @@ symmetricKeyEncrypted | string | yes | The symmetric key used to share secrets w
 
 
 
-### Acknowledge a Dispute
+## Acknowledge a Dispute
 Acknowlegde a dispute when it has been raised against you
 
 ```shell
@@ -461,16 +460,16 @@ curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledg
 { "success": true }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/dispute/acknowledge`
 
-#### Body Parameters
+### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 email | string | depends | The email to get in touch with, required when reason is `noPayment.seller` or `noPayment.buyer`
 
 
-### Acknowledge a Dispute Outcome
+## Acknowledge a Dispute Outcome
 Inform peach and counterparty that you have acknowledged the dispute outcome
 
 ```shell
@@ -484,6 +483,6 @@ curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledg
 { "success": true }
 ```
 
-#### HTTP Request
+### HTTP Request
 `POST /v1/contract/:contractId/dispute/acknowledgeOutcome`
 

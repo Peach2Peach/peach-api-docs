@@ -1,9 +1,10 @@
-## Market
-### Market price
+# Market
+
+## Market price
 Get average market price of given pair
 
 ```shell
-curl "https://api.peachbitcoin.com/v1/market/price/BTCEUR"
+curl https://api.peachbitcoin.com/v1/market/price/BTCEUR
 ```
 
 > The above command returns JSON structured like this:
@@ -16,14 +17,14 @@ curl "https://api.peachbitcoin.com/v1/market/price/BTCEUR"
 }
 ```
 
-#### HTTP Request
+### HTTP Request
 `GET /v1/market/price/:pair/`
 
-### Market prices
+## Market prices
 Get average market prices of all trading pairs
 
 ```shell
-curl "https://api.peachbitcoin.com/v1/market/prices"
+curl https://api.peachbitcoin.com/v1/market/prices
 ```
 
 > The above command returns JSON structured like this:
@@ -45,5 +46,5 @@ curl "https://api.peachbitcoin.com/v1/market/prices"
 }
 ```
 
-#### HTTP Request
+### HTTP Request
 `GET /v1/market/prices`

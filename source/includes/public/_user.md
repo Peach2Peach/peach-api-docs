@@ -82,4 +82,4 @@ curl https://api.peachbitcoin.com/v1/user/referral?code=SATOSHI
 ### Query Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-code | string | yes | Referral code to check
+`code` | `string` | yes | Referral code to check

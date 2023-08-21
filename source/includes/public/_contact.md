@@ -20,7 +20,7 @@ curl https://api.peachbitcoin.com/v1/contact/report
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-email | string | yes | Your email to get in touch with
-topic | string | yes | What the report is about
-reason | string | yes | The reason for the report
-message | string | yes | Message
+`email` | `string` | yes | Your email to get in touch with
+`topic` | `string` | yes | What the report is about
+`reason` | `string` | yes | The reason for the report
+`message` | `string` | yes | Message

@@ -241,8 +241,8 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/user/rate"
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-rating | -1 / 1 | yes | The rating to give your counterparty. -1 = 👎 and 1 = 👍
-signature | string | yes | The signature of the sha256 hash of the counter party's user id signed with the corresponding private key of your user id.
+`rating` | `-1|1` | yes | The rating to give your counterparty. -1 = 👎 and 1 = 👍
+`signature` | `string` | yes | The signature of the sha256 hash of the counter party's user id signed with the corresponding private key of your user id.
 
 
 
@@ -368,7 +368,7 @@ curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/chat
 ### Query Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-page | number | no | The page of the chat history. Each page contains 21 messages
+`page` | `number` | no | The page of the chat history. Each page contains 21 messages
 
 
 ## Post Chat Message
@@ -393,8 +393,8 @@ curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/chat
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-message | string | yes | The message to be sent (encrypted with `symmetricKey`)
-signature | string | yes | The PGP signature of the message
+`message` | `string` | yes | The message to be sent (encrypted with `symmetricKey`)
+`signature` | `string` | yes | The PGP signature of the message
 
 ## Set Chat Message Read
 Tell server that messages have been read
@@ -416,8 +416,8 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/chat/received"
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-start | number | yes | The starting index of read messages
-end | number | yes | The last index of read messages
+`start` | `number` | yes | The starting index of read messages
+`end` | `number` | yes | The last index of read messages
 
 ## Raise a Dispute
 Raise a dispute
@@ -439,10 +439,10 @@ curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/dispute
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-email | string | depends | The email to get in touch with, required when reason is `noPayment.seller` or `noPayment.buyer`
-reason | string | yes | The reason for the dispute: `noPayment.seller`,`noPayment.buyer`, `unresponsive.seller`, `unresponsive.buyer`, `abusive`,`other`
-reason | string | no | A short description as to why the dispute has been raised
-symmetricKeyEncrypted | string | yes | The symmetric key used to share secrets with counter party. Encrypt this key with the public PGP key.
+`email` | `string` | depends | The email to get in touch with, required when reason is `noPayment.seller` or `noPayment.buyer`
+`reason` | `string` | yes | The reason for the dispute: `noPayment.seller`,`noPayment.buyer`, `unresponsive.seller`, `unresponsive.buyer`, `abusive`,`other`
+`message` | `string` | no | A short description as to why the dispute has been raised
+`symmetricKeyEncrypted` | `string` | yes | The symmetric key used to share secrets with counter party. Encrypt this key with the public PGP key.
 
 
 
@@ -466,7 +466,7 @@ curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledge
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-email | string | depends | The email to get in touch with, required when reason is `noPayment.seller` or `noPayment.buyer`
+`email` | `string` | depends | The email to get in touch with, required when reason is `noPayment.seller` or `noPayment.buyer`
 
 
 ## Acknowledge a Dispute Outcome

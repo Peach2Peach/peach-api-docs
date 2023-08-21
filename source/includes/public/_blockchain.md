@@ -64,7 +64,7 @@ curl -X POST -sSLd "010000000100000000000000000000000000000000000000000000000000
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-tx | string | yes | The transaction as hex
+`tx` | `string` | yes | The transaction as hex
 
 ## Get Fee Estimates
 Get the currently suggested fees for a new transaction

@@ -155,7 +155,7 @@ curl -X PATCH https://api.peachbitcoin.com/v1/user/referral/redeem/referralCode
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-code | string | yes | Alphanumeric referral code to register
+`code` | `string` | yes | Alphanumeric referral code to register
 
 
 ## Redeem free trades
@@ -199,7 +199,7 @@ curl -X PATH "https://api.peachbitcoin.com/v1/user/paymentHash"
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-hashes | string[] | yes | Array of payment hashes
+`hashes` | `string[]` | yes | Array of payment hashes
 
 
 ## Logout

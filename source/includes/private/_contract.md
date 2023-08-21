@@ -316,7 +316,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/cancel/reject"
 As a seller you have to wait up to 12 hours for the buyer to claim that the payment has been made. After this time runs out, you have the choice to extend the time or cancel the trade. This endpoint allows you to extend the timer by another 12 hours
 
 ```shell
-curl -X PATCH "https://api.peachbitcoin.com/v1/contract/123-456/cancel/extendTime"
+curl -X PATCH https://api.peachbitcoin.com/v1/contract/123-456/cancel/extendTime
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -335,7 +335,7 @@ curl -X PATCH "https://api.peachbitcoin.com/v1/contract/123-456/cancel/extendTim
 Receive chat history.
 
 ```shell
-curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/chat"
+curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/chat
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -375,7 +375,7 @@ page | number | no | The page of the chat history. Each page contains 21 message
 Send a message via chat
 
 ```shell
-curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/chat"
+curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/chat
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: multipart/form-data' \
 -F 'message="Here is the proof of payment "'
@@ -401,7 +401,7 @@ Tell server that messages have been read
 
 ```shell
 curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/chat/received"
--H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
 > The above command returns a response like this:
@@ -423,7 +423,7 @@ end | number | yes | The last index of read messages
 Raise a dispute
 
 ```shell
-curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/dispute"
+curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/dispute
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -450,7 +450,7 @@ symmetricKeyEncrypted | string | yes | The symmetric key used to share secrets w
 Acknowlegde a dispute when it has been raised against you
 
 ```shell
-curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledge"
+curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledge
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -473,7 +473,7 @@ email | string | depends | The email to get in touch with, required when reason 
 Inform peach and counterparty that you have acknowledged the dispute outcome
 
 ```shell
-curl -X GET "https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledgeOutcome"
+curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledgeOutcome
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 

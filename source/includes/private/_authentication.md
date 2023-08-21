@@ -1,5 +1,5 @@
 
-# Authentication
+# Registration and Authentication
 
 Private API endpoints are used to access user specific resources.
 
@@ -8,11 +8,13 @@ Auth tokens can be acquired by authentication of public keys.
 
 When successfully requesting a token, the public key is automatically registered if it does not exist in the system.
 
-## Get token
+## Register or just Get Access Token
 
 Use this endpoint to get auth token by sending public key, challenge and signed message.
 The received token is valid for 60 minutes.
 
+Note that the first time for a new account you'll need to call `/v1/user/register/`
+Once registered use `/v1/user/auth/` going forward. The request and response parameters are identical.
 
 ```shell
 ## Example request here
@@ -36,12 +38,14 @@ curl -X POST "https://api.peachbitcoin.com/v1/user/auth/"
 
 ### HTTP Request
 
+`POST /v1/user/register/`
 `POST /v1/user/auth/`
 
 ### Body Parameters
 
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-publicKey | string | yes | Public key of user account (recommended to use 1st public key, path m/45'/0/0/0)
-message | string | yes | Message to sign containing current timestamp. <br>Use the following pattern: `Peach Registration ${CURRENT_TIMESTAMP}`
-signature | string | yes | Signature of message, message is hashed by SHA256 algorithm.<br/>Used to verify user is indeed owner of private key which is associate to the public key
+`publicKey` | `string` | yes | Public key of user account (recommended to use 1st public key, path m/48'/0'/0'/0')
+`message` | `string` | yes | Message to sign containing current timestamp. <br>Use the following pattern: `Peach Registration ${CURRENT_TIMESTAMP}`
+`signature` | `string` | yes | Signature of message, message is hashed by SHA256 algorithm.<br/>Used to verify user is indeed owner of private key which is associate to the public key
+`uniqueId` | `string` | no | A unique identifier you wish to associate with your account. Used to take over reputation from one account to another.

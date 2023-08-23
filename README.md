@@ -1,3 +1,6 @@
+# Installation
+`bundle install`
+
 # Run server
 `bundle exec middleman server`
 

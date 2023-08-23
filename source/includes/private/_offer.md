@@ -196,7 +196,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `type` | `string` | yes | `bid`
 `amount` | `[number, number]` | yes | Range within you want to buy sats
 `maxPremium` | `number` | no | The maximum premium you are willing to pay
@@ -286,7 +286,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `type` | `string` | yes | `ask`
 `amount` | `number` | yes | The amount in sats you want to sell
 `premium` | `number` | no | The premium you are selling for
@@ -326,7 +326,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/114"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `publicKey` | `string` | yes | Seller public key needed to create the multisig between seller and peach
 
 
@@ -404,7 +404,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `maxPremium` | `number` | no | The maximum premium you are willing to pay
 
 ## Update Sell Offer
@@ -432,7 +432,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `premium` | `number` | no | The premium you want to sell for
 `refundTx` | `string` | no | Presigned refund transaction which is base64 encoded. Used when requesting trade cancelation to get refunded as soon as buyer accepts.
 
@@ -518,7 +518,7 @@ curl -X GET "https://api.peachbitcoin.com/v1/offer/114/refund"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `tx` | `string` | yes | The release transaction to be broadcasted
 
 ## Re-publish Sell Offer

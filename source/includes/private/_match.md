@@ -86,7 +86,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/match"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `matchingOfferId` | `string` | yes | ID of offer you want to match
 `currency` | `string` | yes | The currency to match with
 `paymentMethod` | `string` | yes |  The payment method to match with
@@ -118,7 +118,7 @@ curl -X DELETE "https://api.peachbitcoin.com/v1/offer/match"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `matchingOfferId` | `string` | yes | ID of offer you want to unmatch
 
 ## Doublematch a buy Offer
@@ -154,7 +154,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/match"
 
 ### Body Parameters
 Name | Type | Required | Description
--- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- - | -- -- -- -- -- -
+--------- | ----------- | ----------- | -----------
 `matchingOfferId` | `string` | yes | ID of offer you want to match
 `currency` | `string` | yes | The currency to match with
 `paymentMethod` | `string` | yes |  The payment method to match with

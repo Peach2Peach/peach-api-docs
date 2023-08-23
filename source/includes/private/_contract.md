@@ -239,7 +239,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/user/rate"
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-`rating` | `-1|1` | yes | The rating to give your counterparty. -1 = 👎 and 1 = 👍
+`rating` | `-1` or `1` | yes | The rating to give your counterparty. -1 = 👎 and 1 = 👍
 `signature` | `string` | yes | The signature of the sha256 hash of the counter party's user id signed with the corresponding private key of your user id.
 
 

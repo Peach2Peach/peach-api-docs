@@ -11,6 +11,7 @@ includes:
   - public/system
   - public/market
   - public/user
+  - public/offer
   - public/contact
   - private/authentication
   - private/user

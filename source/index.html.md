@@ -18,6 +18,7 @@ includes:
   - private/offer
   - private/match
   - private/contract
+  - types
   - errors
 
 search: true

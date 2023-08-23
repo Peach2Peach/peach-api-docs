@@ -200,8 +200,8 @@ Name | Type | Required | Description
 `type` | `string` | yes | `bid`
 `amount` | `[number, number]` | yes | Range within you want to buy sats
 `maxPremium` | `number` | no | The maximum premium you are willing to pay
-`meansOfPayment` | `MeansOfPayment` | yes | Object with `Currency` as keys and array of `paymentMethod` ids as values
-`paymentData` | `OfferPaymentData` | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
+`meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
+`paymentData`| [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
 `releaseAddress` | `string` | yes | Bitcoin address to release funds to complete trade.
 `messageSignature` | `string` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddress`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
 
@@ -290,8 +290,8 @@ Name | Type | Required | Description
 `type` | `string` | yes | `ask`
 `amount` | `number` | yes | The amount in sats you want to sell
 `premium` | `number` | no | The premium you are selling for
-`meansOfPayment` | `MeansOfPayment` | yes | Object with `Currency` as keys and array of `paymentMethod` ids as values
-`paymentData` | `OfferPaymentData` | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
+`meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
+`paymentData` | [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
 `returnAddress` | `string` | yes | Bitcoin address to return funds to in case of a canceled trade.
 
 

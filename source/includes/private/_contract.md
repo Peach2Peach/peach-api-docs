@@ -181,9 +181,7 @@ curl https://api.peachbitcoin.com/v1/contracts
 ### HTTP Request
 `GET /v1/contracts`
 
-
-
-## Payment Made
+## Confirm Payment Made
 Buyer: confirm that payment has been made.
 
 ```shell

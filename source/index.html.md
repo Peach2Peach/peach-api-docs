@@ -16,6 +16,7 @@ includes:
   - private/authentication
   - private/user
   - private/offer
+  - private/match
   - private/contract
   - errors
 

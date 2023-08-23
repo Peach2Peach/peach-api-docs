@@ -49,3 +49,8 @@ Name | Type | Required | Description
 `message` | `string` | yes | Message to sign containing current timestamp. <br>Use the following pattern: `Peach Registration ${CURRENT_TIMESTAMP}`
 `signature` | `string` | yes | Signature of message, message is hashed by SHA256 algorithm.<br/>Used to verify user is indeed owner of private key which is associate to the public key
 `uniqueId` | `string` | no | A unique identifier you wish to associate with your account. Used to take over reputation from one account to another.
+
+
+## Using the Access Token
+
+Once acquired, the access token is passed through the request headers `Authorization`

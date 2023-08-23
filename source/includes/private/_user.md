@@ -99,7 +99,7 @@ Name | Type | Required | Description
 `pgpPublicKey` | `string` | no | PGP public key to set
 `message` | `string` | yes if `pgpPublicKey` is passed | Message to be signed with secret PGP keys
 `pgpSignature` | `string` | yes if `pgpPublicKey` is passed | Signature for message
-`signature` | `string` | yes if `pgpPublicKey` is passed | Signature by the peach account of the new `pgpPublicKey` as message
+`signature` | `string` | yes if `pgpPublicKey` is passed | Signature by the Peach account of the new `pgpPublicKey` as message
 `fcmToken` | `string` | no | token for receiving push notifications
 `referralCode` | `string` | no | Used referral code
 `feeRate` | `string|number` | no | Can be a fixed fee rate if passed as `number`. But also the following enums are allowed: 'fastestFee' | 'halfHourFee' | 'hourFee' | 'economyFee' | 'minimumFee'
@@ -131,7 +131,7 @@ Name | Type | Required | Description
 `enableBatching` | `boolean` | yes | If true, escrow payouts will be batched
 
 ## Redeem custom referral code
-Redeem peach bonus points and register a new referral code to shill. Old referral codes keep working.
+Redeem Peach bonus points and register a new referral code to shill. Old referral codes keep working.
 
 ```shell
 curl -X PATCH https://api.peachbitcoin.com/v1/user/referral/redeem/referralCode
@@ -159,7 +159,7 @@ Name | Type | Required | Description
 
 
 ## Redeem free trades
-Redeem peach bonus points and receive free trades credited onto your peach account
+Redeem Peach bonus points and receive free trades credited onto your Peach account
 
 ```shell
 curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/fiveFreeTrades

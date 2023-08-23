@@ -4,9 +4,7 @@ title: Peach API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
-toc_footers:
-  - <a href='https://peachbitcoin.com/'>🍑</a>
-
+# TODO styling
 includes:
   - public/system
   - public/market
@@ -32,7 +30,7 @@ meta:
 
 # Introduction
 
-The peach API is categorized in two parts: Public and private API endpoints.
+The Peach API is categorized in two parts: Public and private API endpoints.
 
 All market data, that is publicly available can be accessed without API credentials.
 

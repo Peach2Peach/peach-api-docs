@@ -26,7 +26,7 @@ Error Code | ID                              | Description
 `409`      | `ALREADY_TAKEN`                 | The resource is already taken.
 `409`      | `DUPLICATE`                     | Duplicate resource found.
 `429`      | `TOO_MANY_REQUESTS`             | Too many requests.
-`451`      | `UNAVAILABLE_FOR_LEGAL_REASONS` | Unavailable due to legal reasons (i.e. you request from a country peach does not offer it's services to)
+`451`      | `UNAVAILABLE_FOR_LEGAL_REASONS` | Unavailable due to legal reasons (i.e. you request from a country Peach does not offer it's services to)
 `500`      | `AUTHENTICATION_FAILURE`        | Internal authentication error.
 `500`      | `INTERNAL_SERVER_ERROR`         | Internal server error.
 `503`      | `SERVICE_UNAVAILABLE`           | The service is currently unavailable.

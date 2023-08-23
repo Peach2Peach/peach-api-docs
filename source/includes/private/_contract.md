@@ -468,7 +468,7 @@ Name | Type | Required | Description
 
 
 ## Acknowledge a Dispute Outcome
-Inform peach and counterparty that you have acknowledged the dispute outcome
+Inform Peach and counterparty that you have acknowledged the dispute outcome
 
 ```shell
 curl -X GET https://api.peachbitcoin.com/v1/contract/123-456/dispute/acknowledgeOutcome

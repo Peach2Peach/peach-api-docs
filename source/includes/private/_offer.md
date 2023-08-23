@@ -327,7 +327,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/114"
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-`publicKey` | `string` | yes | Seller public key needed to create the multisig between seller and peach
+`publicKey` | `string` | yes | Seller public key needed to create the multisig between seller and Peach
 
 
 ## Get Funding Status

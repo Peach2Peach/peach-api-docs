@@ -181,7 +181,7 @@ curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/fiveFreeTrad
 Unlink payment hash with current user (used when you intend to create a new user)
 
 ```shell
-curl -X PATH "https://api.peachbitcoin.com/v1/user/paymentHash"
+curl -X PATCH "https://api.peachbitcoin.com/v1/user/paymentHash"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -206,7 +206,7 @@ Name | Type | Required | Description
 Logout consists of unregistering for push notifications.
 
 ```shell
-curl -X PATH "https://api.peachbitcoin.com/v1/user/logout"
+curl -X PATCH "https://api.peachbitcoin.com/v1/user/logout"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 

@@ -384,7 +384,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/114/escrow/confirm"
 Update buy offer preferences
 
 ```shell
-curl -X POST "https://api.peachbitcoin.com/v1/offer/"
+curl -X POST "https://api.peachbitcoin.com/v1/offer/123"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -400,7 +400,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 ```
 
 ### HTTP Request
-`PATCH /v1/offer/`
+`PATCH /v1/offer/:offerId`
 
 ### Body Parameters
 Name | Type | Required | Description
@@ -411,7 +411,7 @@ Name | Type | Required | Description
 Update sell offer preferences
 
 ```shell
-curl -X POST "https://api.peachbitcoin.com/v1/offer/"
+curl -X POST "https://api.peachbitcoin.com/v1/offer/123"
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
 -H 'Content-Type: application/json' \
 --data-raw '{
@@ -428,7 +428,7 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 ```
 
 ### HTTP Request
-`PATCH /v1/offer/`
+`PATCH /v1/offer/:offerId`
 
 ### Body Parameters
 Name | Type | Required | Description

@@ -50,7 +50,7 @@ Name | Type | Required | Description
 `signature` | `string` | yes | Hex encoded signature* of message, message is hashed by SHA256 algorithm and signed with the corresponding private key using ECDSA.<br/>Used to verify user is indeed owner of private key which is associate to the public key.
 `uniqueId` | `string` | no | A unique identifier you wish to associate with your account. Used to take over reputation from one account to another.
 
-* base64 encoding support is planned for a future release.
+\* base64 encoding support is planned for a future release.
 
 ## Using the Access Token
 

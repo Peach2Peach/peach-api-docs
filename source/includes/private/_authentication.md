@@ -47,9 +47,10 @@ Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 `publicKey` | `string` | yes | Public key of user account (recommended to use 1st public key, path m/48'/0'/0'/0')
 `message` | `string` | yes | Message to sign containing current timestamp. <br>Use the following pattern: `Peach Registration ${CURRENT_TIMESTAMP}`
-`signature` | `string` | yes | Signature of message, message is hashed by SHA256 algorithm.<br/>Used to verify user is indeed owner of private key which is associate to the public key
+`signature` | `string` | yes | Hex encoded signature* of message, message is hashed by SHA256 algorithm and signed with the corresponding private key using ECDSA.<br/>Used to verify user is indeed owner of private key which is associate to the public key.
 `uniqueId` | `string` | no | A unique identifier you wish to associate with your account. Used to take over reputation from one account to another.
 
+* base64 encoding support is planned for a future release.
 
 ## Using the Access Token
 

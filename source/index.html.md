@@ -4,13 +4,13 @@ title: Peach API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
-# TODO styling
 includes:
   - public/system
   - public/market
   - public/user
   - public/offer
   - public/contact
+  - public/blockchain
   - private/authentication
   - private/user
   - private/offer

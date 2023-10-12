@@ -58,3 +58,50 @@ curl https://api.peachbitcoin.com/v1/info
 
 ### HTTP Request
 `GET /v1/system/info`
+
+
+## Payment Method Info
+Retrieve information about supported payment methods and their payment data fields templates
+
+Note that the mandatory fields are arranged logically to express whether all are mandatory or either/or.
+
+So following the example structure, the fields could be expressed as following logical operators:
+
+- paypal: `userName || email || phone`
+- sepa: `beneficiary && iban && bic`
+- nationalTransfer: `beneficiary && ((iban && bic) || accountNumber)`
+
+```shell
+curl https://api.peachbitcoin.com/v1/info/paymentMethods
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "paypal": {
+    "mandatory": [
+      [["userName"], ["email"], ["phone"]]
+    ],
+    "optional": ["reference"]
+  },
+  "sepa": {
+    "mandatory": [
+      [["beneficiary"]],
+      [["iban"]],
+      [["bic"]]
+    ],
+    "optional": ["reference"]
+  },
+  "nationalTransfer": {
+    "mandatory": [
+      [["beneficiary"]],
+      [["iban", "bic"], ["accountNumber"]]
+    ],
+    "optional": ["reference"]
+  }
+}
+```
+
+### HTTP Request
+`GET /v1/system/info`

@@ -49,6 +49,30 @@ curl -X GET https://api.peachbitcoin.com/v1/user/me
 
 `GET /v1/user/me`
 
+## Get User Payment Method Info
+Get the current user's payment method info. Currently includes list of forbidden payment methods.
+
+```shell
+curl -X GET https://api.peachbitcoin.com/v1/user/me/paymentMethods
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
+```
+
+> The above command returns a response like this:
+
+```json
+{
+ "forbidden": {
+    "buy": ["paypal"],
+    "sell": []
+  }
+}
+```
+
+### HTTP Request
+
+`GET /v1/user/me/paymentMethods`
+
+
 ## Trading Limit
 Get your current trading limits.
 
@@ -73,6 +97,7 @@ curl -X GET https://api.peachbitcoin.com/v1/user/tradingLimit
 ### HTTP Request
 
 `GET /v1/user/tradingLimit`
+
 
 ## Update User
 Update your pgp keys, fcmToken (push notifications), used referral code and fee rate.
@@ -103,6 +128,67 @@ Name | Type | Required | Description
 `fcmToken` | `string` | no | token for receiving push notifications
 `referralCode` | `string` | no | Used referral code
 `feeRate` | `string|number` | no | Can be a fixed fee rate if passed as `number`. But also the following enums are allowed: 'fastestFee' | 'halfHourFee' | 'hourFee' | 'economyFee' | 'minimumFee'
+
+## User status
+Returns your status in relation to another user
+
+```shell
+curl -X GET https://api.peachbitcoin.com/v1/user/0213583209ada26c16e5c3157d86809f8fd46e602936a4e3d51cd988a42ebe19f3/status
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
+```
+
+> The above command returns a response like this:
+
+```json
+{
+  "isBlocked": false
+}
+```
+
+### HTTP Request
+
+`GET /v1/user/:userId/status`
+
+## Block User
+Block a user. Once blocked, you won't see their matches and they won't be able to see yours.
+If you are still in a trade with the user, you can still complete the trade and chat.
+
+```shell
+curl -X PUT https://api.peachbitcoin.com/v1/user/0213583209ada26c16e5c3157d86809f8fd46e602936a4e3d51cd988a42ebe19f3/block
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
+```
+
+> The above command returns a response like this:
+
+```json
+{ "success": true }
+```
+
+### HTTP Request
+
+`PUT /v1/user/:userId/block`
+
+
+
+
+## Unblock User
+Unblock a user.
+
+```shell
+curl -X DELETE https://api.peachbitcoin.com/v1/user/0213583209ada26c16e5c3157d86809f8fd46e602936a4e3d51cd988a42ebe19f3/block
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
+```
+
+> The above command returns a response like this:
+
+```json
+{ "success": true }
+```
+
+### HTTP Request
+
+`DELETE /v1/user/:userId/block`
+
 
 ## Enable Batching
 With this endpoint you can participate in or leave the batching program.
@@ -162,7 +248,7 @@ Name | Type | Required | Description
 Redeem Peach bonus points and receive free trades credited onto your Peach account
 
 ```shell
-curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/fiveFreeTrades
+curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/freeTrades
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 

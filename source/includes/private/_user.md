@@ -127,7 +127,7 @@ Name | Type | Required | Description
 `signature` | `string` | yes if `pgpPublicKey` is passed | Signature by the Peach account of the new `pgpPublicKey` as message
 `fcmToken` | `string` | no | token for receiving push notifications
 `referralCode` | `string` | no | Used referral code
-`feeRate` | `string|number` | no | Can be a fixed fee rate if passed as `number`. But also the following enums are allowed: 'fastestFee' | 'halfHourFee' | 'hourFee' | 'economyFee' | 'minimumFee'
+`feeRate` | `string\|number` | no | Can be a fixed fee rate if passed as `number`. But also the following enums are allowed: 'fastestFee' | 'halfHourFee' | 'hourFee' | 'economyFee' | 'minimumFee'
 
 ## User status
 Returns your status in relation to another user

@@ -69,8 +69,30 @@ curl -X GET https://api.peachbitcoin.com/v1/user/me/paymentMethods
 ```
 
 ### HTTP Request
-
 `GET /v1/user/me/paymentMethods`
+
+
+## Delete User payment info
+Delete the hash of the user's payment info sent in the call.
+
+```shell
+curl -X DELETE https://api.peachbitcoin.com/v1/user/paymentHash \
+     -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
+     -d '{"hashes":["<hash1>","<hash2>",...]}'
+
+```
+
+> The above command returns a response like this:
+
+```json
+{
+  "success": true
+}
+```
+
+### HTTP Request
+
+`GET /v1/user/me/paymentHash`
 
 
 ## Trading Limit
@@ -261,7 +283,7 @@ curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/freeTrades
 }
 ```
 
-`PATCH /v1/user/referral/redeem/fiveFreeTrades`
+`PATCH /v1/user/referral/redeem/freeTrades`
 
 ## Unlink Payment Hashes
 Unlink payment hash with current user (used when you intend to create a new user)

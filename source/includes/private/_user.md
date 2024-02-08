@@ -72,27 +72,6 @@ curl -X GET https://api.peachbitcoin.com/v1/user/me/paymentMethods
 `GET /v1/user/me/paymentMethods`
 
 
-## Delete User payment info
-Delete the hash of the user's payment info sent in the call.
-
-```shell
-curl -X DELETE https://api.peachbitcoin.com/v1/user/paymentHash \
-     -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
-     -d '{"hashes":["<hash1>","<hash2>",...]}'
-
-```
-
-> The above command returns a response like this:
-
-```json
-{
-  "success": true
-}
-```
-
-### HTTP Request
-
-`GET /v1/user/me/paymentHash`
 
 
 ## Trading Limit
@@ -327,3 +306,31 @@ curl -X PATCH "https://api.peachbitcoin.com/v1/user/logout"
 ### HTTP Request
 
 `PATCH /v1/user/logout`
+
+
+## Set user source
+Tells Peach how you knew about it
+
+```shell
+curl -X POST https://api.peachbitcoin.com/v1/user/source \
+     -H "Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28" \
+     -d '{"source":"twitter"}'
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "valid": true
+}
+```
+
+### HTTP Request
+`POST /v1/user/source`
+
+### Body Parameters
+
+Name | Type | Required | Description
+--------- | --------- | ----------- | -----------
+`source` | `string` | yes | The source that brought you to Peach: `twitter` , `google` , `instagram` , `friend` or `other`

@@ -19,7 +19,7 @@ curl -X GET https://api.peachbitcoin.com/v1/offer/114/matches
     "lastModified": "2023-08-22T15:35:56.772Z",
     "user": {
       "id": "03a73739b3f005fccb3f02ebeb2eae41b5d5c0c7dd3d448a00185c2c07f2b55dd1",
-      ...
+      ... ( see Users/User for more information about the User object )
     },
     "offerId": "107",
     "prices": { "EUR": 77.67 },
@@ -55,6 +55,61 @@ curl -X GET https://api.peachbitcoin.com/v1/offer/114/matches
 ### HTTP Request
 `GET /v1/offer/:offerId/matches`
 
+
+## Get One Match
+Get a specific match for a specific offer.
+
+```shell
+curl -X GET "https://api.peachbitcoin.com/v1/offer/12345/match/67890" \
+     -H "Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28" \
+     -H "cf-ipcountry: CH"
+
+```
+
+
+> The above command returns a response like this:
+
+```json
+{
+  "creationDate": "2023-08-22T15:35:56.772Z",
+  "lastModified": "2023-08-22T15:35:56.772Z",
+  "user": {
+    "id": "03a73739b3f005fccb3f02ebeb2eae41b5d5c0c7dd3d448a00185c2c07f2b55dd1",
+    ... ( see Users/User for more information about the User object )
+  },
+  "offerId": "107",
+  "prices": { "EUR": 77.67 },
+  "amount": 300000,
+  "premium": 8,
+  "escrow": "bcrt1q8u4al33hrayyqrnyxu5ut8l644lgtw6mxey77v9n8jqj0awkywws6fr47p",
+  "matchedPrice": null,
+  "meansOfPayment": {
+    "EUR": ["cash.lv.riga.baltic-honeybadger", "paypal"]
+  },
+  "paymentData": {
+    "cash.lv.riga.baltic-honeybadger": {
+      "hashes": ["2312b8c8bcc4c5e8541893b5e3bc88d165ba83ea6f19fc747a5e1874226c1f08"],
+      "country": "LV"
+    },
+    "paypal": {
+      "hashes": ["fda659c82ae97ce2c4b26665e558a97796951f7691f85e97d693425a1eaeae21"]
+    }
+  },
+  "selectedCurrency": null,
+  "selectedPaymentMethod": null,
+  "symmetricKeyEncrypted": "",
+  "symmetricKeySignature": "",
+  "matched": false,
+  "unavailable": {
+    "exceedsLimit": []
+  }
+}
+
+
+```
+
+### HTTP Request
+`GET /v1/offer/:offerId/match/:matchId`
 
 ## Match a Sell Offer
 Match a sell offer

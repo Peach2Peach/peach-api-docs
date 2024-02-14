@@ -75,12 +75,30 @@ curl https://api.peachbitcoin.com/v1/market/offers/stats
 ### HTTP Request
 `GET /v1/market/offers/stats`
 
-### Body Parameters
-Name | Type | Required | Description
---------- | ----------- | ----------- | -----------
-`matchingOfferId` | `string` | yes | ID of offer you want to match
-`currency` | `string` | yes | The currency to match with
-`paymentMethod` | `string` | yes |  The payment method to match with
-`premium` | `string` | no | Send the premium to ensure you match with the expected premium (in case the seller just changes it)
-`symmetricKeyEncrypted` | `string` | yes | PGP encrypted symmetric key. Ensure that the symmetric key is random and of sufficient entropy
-`symmetricKeySignature` | `string` | yes | PGP signature of symmetric key for verification
+## Peach Market History
+Get the history of the buy and sell offers
+
+```shell
+curl https://api.peachbitcoin.com/v1/market/offers/stats/history
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "buy":
+  {
+    "open":2593
+  },
+  "sell":
+  {
+    "open":6942,
+    "avgPremium":2.14
+  }
+}
+```
+
+### HTTP Request
+`POST /v1/market/offers/stats/history`
+
+

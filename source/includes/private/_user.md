@@ -249,7 +249,7 @@ Name | Type | Required | Description
 Redeem Peach bonus points and receive free trades credited onto your Peach account
 
 ```shell
-curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/freeTrades
+curl -X PATCH https://api.peachbitcoin.com/v1/user/referral/redeem/freeTrades
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 

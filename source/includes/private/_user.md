@@ -194,10 +194,10 @@ curl -X DELETE https://api.peachbitcoin.com/v1/user/0213583209ada26c16e5c3157d86
 ## Enable Batching
 With this endpoint you can participate in or leave the batching program.
 
-Should you leave the batching program while payouts are still pending. They will be paid out immediately at higher fees.
+Should you leave the batching program while payouts are still pending ? They will be paid out immediately at higher fees.
 
 ```shell
-curl -X PATCH https://api.peachbitcoin.com/v1/user/batching
+curl -X POST https://api.peachbitcoin.com/v1/user/batching
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -209,7 +209,7 @@ curl -X PATCH https://api.peachbitcoin.com/v1/user/batching
 
 ### HTTP Request
 
-`PATCH /v1/user/batching`
+`POST /v1/user/batching`
 
 ### Body Parameters
 

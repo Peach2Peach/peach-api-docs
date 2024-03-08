@@ -1,5 +1,7 @@
 # System
+
 ## Status
+
 Get system status related information.
 
 ```shell
@@ -17,9 +19,11 @@ curl https://api.peachbitcoin.com/v1/system/status
 ```
 
 ### HTTP Request
+
 `GET /v1/system/status`
 
 ## Info
+
 Retrieve information about the Peach API
 
 ```shell
@@ -48,7 +52,7 @@ curl https://api.peachbitcoin.com/v1/info
     "id": "paypal",
     "currencies": ["EUR", "CHF", "GBP", "CZK", "DKK", "HUF", "PLN", "NOK", "SEK"],
     "anonymous": false
-  }, 
+  },
   ...
   ],
   "minAppVersion": "0.2.8",
@@ -57,10 +61,35 @@ curl https://api.peachbitcoin.com/v1/info
 ```
 
 ### HTTP Request
+
 `GET /v1/info`
 
+## News
 
-## Payment Method Info
+Get the current news popup displayed in the Peach app
+
+```shell
+curl https://api.peachbitcoin.com/V1/info/news
+```
+
+> The above command returns JSON structure like this:
+
+```json
+[
+  {
+    "text": "Orange pill a woman today! Best gift you can give for International Women Day! ",
+    "shareText": "Orange pill a woman today! Best gift you can give for International Women Day! ",
+    "url": "https://peachbitcoin.com/"
+  }
+]
+```
+
+### HTTP Request
+
+`GET /v1/info/news`
+
+## Payment Methods Info
+
 Retrieve information about supported payment methods and their payment data fields templates
 
 Note that the mandatory fields are arranged logically to express whether all are mandatory or either/or.
@@ -78,30 +107,79 @@ curl https://api.peachbitcoin.com/v1/info/paymentMethods
 > The above command returns JSON structured like this:
 
 ```json
+[
+  {
+    "id":"sepa",
+    "fields": {
+      "mandatory": [
+        [["beneficiary"]],[["iban"]],[["bic"]]
+      ],
+      "optional": ["reference"]
+    },
+    "currencies": ["EUR"],
+    "anonymous": false
+  },
+  {
+    "id":"instantSepa",
+    "fields": {
+      "mandatory": [
+        [["beneficiary"]],[["iban"]],[["bic"]]
+      ],
+      "optional": ["reference"]
+    },
+    "currencies": ["EUR"],
+    "anonymous": false
+  },
+  {
+    "id":"paypal",
+    "fields": {
+      "mandatory": [
+        [["userName"],["email"],["phone"]]
+      ],
+      "optional": ["reference"]
+    },
+    "currencies": ["EUR","CHF","GBP","CZK","DKK","HUF","PLN","NOK","SEK"],
+    "anonymous": false
+  },
+  [...]
+]
+```
+
+### HTTP Request
+
+`GET /v1/info/paymentMethods`
+
+## Single Payment Method info
+
+Retrieve information about a specific Payment Method.
+Note that the mandatory fields are arranged logically to express whether all are mandatory or either/or.
+
+So following the example structure, the fields could be expressed as following logical operators:
+
+- paypal: `userName || email || phone`
+- sepa: `beneficiary && iban && bic`
+- nationalTransfer: `beneficiary && ((iban && bic) || accountNumber)`
+
+```shell
+curl https://api.peachbitcoin.com/v1/info/paymentMethod/paypal
+```
+
+> The above command returns JSON structured like this:
+
+```json
 {
-  "paypal": {
+  "id":"paypal",
+  "fields":{
     "mandatory": [
-      [["userName"], ["email"], ["phone"]]
+      [["userName"],["email"],["phone"]]
     ],
     "optional": ["reference"]
   },
-  "sepa": {
-    "mandatory": [
-      [["beneficiary"]],
-      [["iban"]],
-      [["bic"]]
-    ],
-    "optional": ["reference"]
-  },
-  "nationalTransfer": {
-    "mandatory": [
-      [["beneficiary"]],
-      [["iban", "bic"], ["accountNumber"]]
-    ],
-    "optional": ["reference"]
-  }
+  "currencies": ["EUR","CHF","GBP","CZK","DKK","HUF","PLN","NOK","SEK"],
+  "anonymous":false
 }
 ```
 
 ### HTTP Request
-`GET /v1/info/paymentMethods`
+
+`GET /v1/info/paymentMethod/:paymentMethod`

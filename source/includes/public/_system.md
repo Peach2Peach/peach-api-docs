@@ -183,3 +183,32 @@ curl https://api.peachbitcoin.com/v1/info/paymentMethod/paypal
 ### HTTP Request
 
 `GET /v1/info/paymentMethod/:paymentMethod`
+
+## Captcha Challenge
+
+Retrieves a captcha challenge to be solved by the user.
+
+Peach app uses this endpoint from a webview when Cloudflare denies access to the Peach API.
+
+
+```shell
+curl https://api.peachbitcoin.com/v1/human/verify
+```
+
+> The above command returns HTML structured like this:
+
+```html
+<html>
+    <body>
+    <script>
+          if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify({
+            userAgent: window.navigator.userAgent,
+            cfClearance: "undefined"
+          }))
+        </script>
+    </body>
+</html>
+```
+
+### HTTP Request
+`GET /v1/human/verify`

@@ -31,11 +31,17 @@ curl https://api.peachbitcoin.com/v1/user/0213583209ada26c16e5c3157d86809f8fd46e
   },
   "pgpPublicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----...-----END PGP PUBLIC KEY BLOCK-----",
   "pgpPublicKeyProof": "3b55cc1bf439d4...acf36ae",
+  "pgpPublicKeys": [
+    {
+      "publicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----...-----END PGP PUBLIC KEY BLOCK-----",
+      "proof": "3b55cc1bf439d4...acf36ae"
+    }
+  ]
 }
 ```
 
 ### HTTP Request
-`GET /v1/user/:userid`
+`GET /v1/user/:userId`
 
 
 ## Rating

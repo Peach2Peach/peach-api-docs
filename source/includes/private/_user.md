@@ -69,8 +69,9 @@ curl -X GET https://api.peachbitcoin.com/v1/user/me/paymentMethods
 ```
 
 ### HTTP Request
-
 `GET /v1/user/me/paymentMethods`
+
+
 
 
 ## Trading Limit
@@ -193,10 +194,10 @@ curl -X DELETE https://api.peachbitcoin.com/v1/user/0213583209ada26c16e5c3157d86
 ## Enable Batching
 With this endpoint you can participate in or leave the batching program.
 
-Should you leave the batching program while payouts are still pending. They will be paid out immediately at higher fees.
+Should you leave the batching program while payouts are still pending ? They will be paid out immediately at higher fees.
 
 ```shell
-curl -X PATCH https://api.peachbitcoin.com/v1/user/batching
+curl -X POST https://api.peachbitcoin.com/v1/user/batching
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -208,7 +209,7 @@ curl -X PATCH https://api.peachbitcoin.com/v1/user/batching
 
 ### HTTP Request
 
-`PATCH /v1/user/batching`
+`POST /v1/user/batching`
 
 ### Body Parameters
 
@@ -248,7 +249,7 @@ Name | Type | Required | Description
 Redeem Peach bonus points and receive free trades credited onto your Peach account
 
 ```shell
-curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/freeTrades
+curl -X PATCH https://api.peachbitcoin.com/v1/user/referral/redeem/freeTrades
 -H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
 ```
 
@@ -261,7 +262,7 @@ curl -X PATCH https://api.peachbitcoin.com//v1/user/referral/redeem/freeTrades
 }
 ```
 
-`PATCH /v1/user/referral/redeem/fiveFreeTrades`
+`PATCH /v1/user/referral/redeem/freeTrades`
 
 ## Unlink Payment Hashes
 Unlink payment hash with current user (used when you intend to create a new user)
@@ -305,3 +306,31 @@ curl -X PATCH "https://api.peachbitcoin.com/v1/user/logout"
 ### HTTP Request
 
 `PATCH /v1/user/logout`
+
+
+## Set user source
+Tells Peach how you knew about it
+
+```shell
+curl -X POST https://api.peachbitcoin.com/v1/user/source \
+     -H "Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28" \
+     -d '{"source":"twitter"}'
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "valid": true
+}
+```
+
+### HTTP Request
+`POST /v1/user/source`
+
+### Body Parameters
+
+Name | Type | Required | Description
+--------- | --------- | ----------- | -----------
+`source` | `string` | yes | The source that brought you to Peach: `twitter` , `google` , `instagram` , `friend` or `other`

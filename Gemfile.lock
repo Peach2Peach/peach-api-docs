@@ -130,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.4)
   middleman-autoprefixer (~> 3.0)
+  middleman-core
   middleman-sprockets (~> 4.1)
   middleman-syntax (~> 3.2)
   nokogiri (~> 1.12.1)

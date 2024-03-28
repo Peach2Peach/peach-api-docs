@@ -181,7 +181,7 @@ curl https://api.peachbitcoin.com/v1/contracts
 ### HTTP Request
 `GET /v1/contracts`
 
-## Confirm Payment Made
+## Confirm Payment Made (Buyer)
 Buyer: confirm that payment has been made.
 
 ```shell
@@ -199,23 +199,39 @@ curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/payment/confirm"
 `POST /v1/contract/:contractId/payment/confirm`
 
 
-## Confirm Payment Received
-Confirm a payment has been made.
+## Confirm Payment Received (Seller)
+Seller: Confirm a payment has been received.
 
 ```shell
-curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/payment/confirm"
--H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28'
+curl -X POST "https://api.peachbitcoin.com/v1/contract/123-456/payment/confirm" \
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
+-H 'Content-Type: application/json' \
+-d '{
+  "releaseTransaction": "24efff....46164",
+  "batchId": "cHNid...sAAA="
+}'
+
 ```
 
 > The above command returns a response like this:
 
 ```json
-{ "txId": "24efff...46164" }
+{
+  "success": true,
+  "txId": "24efff...46164",
+  "batchId": "cHNidP8...sAAAA"
+}
+
 ```
 
 ### HTTP Request
 `POST /v1/contract/:contractId/payment/confirm`
 
+### Body Parameters
+Name | Type     | Required | Description
+--------- |----------|----------| -----------
+`releaseTransaction` | `string`  | yes      | The release transaction
+`batchId` | `string` | no       | The PSBT of the batch release transaction
 
 
 ## Rate Counterparty

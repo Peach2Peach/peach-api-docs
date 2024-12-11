@@ -206,6 +206,55 @@ Name | Type | Required | Description
 `messageSignature` | `string` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddress`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
 
 
+## Search offers summary
+Gets a summary for all offers that match the given criteria.
+
+```shell
+curl -X POST "https://api.peachbitcoin.com/v1/offer/search/summary"
+-H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "type": "ask",
+  "amount": [30000, 2000000],
+  "meansOfPayment": { "EUR": ["sepa"] },
+  "maxPremium": 10,
+  "minReputation": 0.5
+}'
+```
+
+> The above command returns a response like this:
+
+```json
+{
+  "offers": [
+    {
+      "amount": 1000000,
+      "premium": 2.1
+    },
+    {
+      "amount": 500000,
+      "premium": 3.5
+    }
+    [...]
+  ]
+}
+```
+### HTTP Request
+
+`POST /v1/offer/search/summary`
+
+### Body Parameters
+
+Name | Type | Required | Description
+--------- | ----------- | ----------- | -----------
+`type` | `string` | no | The offer type to filter for: `ask|bid`
+`amount` | <code>number&#124;[number,number]</code> | no | The offer amount or a range to filter for
+`meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | no | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
+`maxPremium` | `number` | no | The maximum premium sell offers should show for
+`minReputation` | `number` | no | The minimum reputation the users need to have (it is a number between `-1` and `1`)
+
+
+
 ## Post Sell Offer
 Post a new sell offer.
 

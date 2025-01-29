@@ -48,3 +48,37 @@ curl https://api.peachbitcoin.com/v1/market/prices
 
 ### HTTP Request
 `GET /v1/market/prices`
+
+## ATH price
+get the All-Time High (ATH) for the last 24 hours, 7 days, and 30 days
+
+```shell
+curl https://api.peachbitcoin.com/v1/market/TradePricePeaks
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "tradePeaks": {
+    "24h": {
+      "EUR": 116926,
+      "CHF": 110378,
+      "USD": 122023
+    },
+    "7d": {
+      "EUR": 120565,
+      "CHF": 114520,
+      "USD": 126422
+    },
+    "30d": {
+      "EUR": 125989,
+      "CHF": 118743,
+      "USD": 130243
+    }
+  }
+}
+```
+
+### HTTP Request
+`GET /v1/market/TradePricePeaks`

@@ -53,7 +53,7 @@ curl https://api.peachbitcoin.com/v1/market/prices
 get the All-Time High (ATH) for the last 24 hours, 7 days, and 30 days
 
 ```shell
-curl https://api.peachbitcoin.com/v1/market/TradePricePeaks
+curl https://api.peachbitcoin.com/v1/market/tradePricePeaks
 ```
 
 > The above command returns JSON structured like this:
@@ -81,4 +81,4 @@ curl https://api.peachbitcoin.com/v1/market/TradePricePeaks
 ```
 
 ### HTTP Request
-`GET /v1/market/TradePricePeaks`
+`GET /v1/market/tradePricePeaks`

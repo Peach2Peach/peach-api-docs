@@ -206,8 +206,8 @@ Name | Type | Required | Description
 `messageSignature` | `string` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddress`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
 
 
-## Post Sell Offer
-Post a new sell offer.
+## Post Offer
+Post a new offer.
 
 ```shell
 curl -X POST "https://api.peachbitcoin.com/v1/offer/"
@@ -287,12 +287,12 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-`type` | `string` | yes | `ask`
-`amount` | `number` | yes | The amount in sats you want to sell
-`premium` | `number` | no | The premium you are selling for
+`type` | `string` | yes | `ask` or `bid`
+`amount` | `number` | yes | The amount in sats you want to sell or buy
+`premium` | `number` | no | The premium you are selling or buying for
 `meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
 `paymentData` | [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
-`returnAddress` | `string` | yes | Bitcoin address to return funds to in case of a canceled trade.
+`returnAddress` | `string` | yes for sell | Bitcoin address to return funds to in case of a canceled trade.
 
 
 ## Create Escrow

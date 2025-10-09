@@ -38,13 +38,7 @@ curl -X GET https://api.peachbitcoin.com/v1/offer/114
 Search for offers where users are **selling Bitcoin**
 
 ```shell
-curl -X POST https://api.peachbitcoin.com/v1/offer/search/sell?page=0&size=10&sortBy=lowestPremium
--H 'Content-Type: application/json' \
---data-raw '{
-  "type": "ask",
-  "amount": [30000, 2000000],
-  "meansOfPayment": { "EUR": ["sepa"] }
-}'
+curl -X GET https://api.peachbitcoin.com/v1/offer/search/sell?page=0&size=10&sortBy=lowestPremium
 ```
 
 > The above command returns a response like this:
@@ -80,18 +74,6 @@ curl -X POST https://api.peachbitcoin.com/v1/offer/search/sell?page=0&size=10&so
 `POST /v1/offer/search/sell`
 
 
-### Body Parameters
-
-Name | Type | Required | Description
---------- | ----------- | ----------- | -----------
-`amount` | <code>number&#124;[number,number]</code> | no | The offer amount or a range to filter for
-`meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | no | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
-`maxPremium` | `number` | no | The maximum premium sell offers should show for
-`minReputation` | `number` | no | The minimum reputation the users need to have (it is a number between `-1` and `1`)
-
-
-
-
 ### Query Parameters
 
 Name | Type | Required | Description
@@ -107,13 +89,7 @@ Name | Type | Required | Description
 Search for offers where users are **buying Bitcoin**
 
 ```shell
-curl -X POST https://api.peachbitcoin.com/v1/offer/search/buy?page=0&size=10&sortBy=lowestPremium
--H 'Content-Type: application/json' \
---data-raw '{
-  "type": "ask",
-  "amount": [30000, 2000000],
-  "meansOfPayment": { "EUR": ["sepa"] }
-}'
+curl -X GET https://api.peachbitcoin.com/v1/offer/search/buy?page=0&size=10&sortBy=lowestPremium
 ```
 
 > The above command returns a response like this:
@@ -147,18 +123,6 @@ curl -X POST https://api.peachbitcoin.com/v1/offer/search/buy?page=0&size=10&sor
 ### HTTP Request
 
 `POST /v1/offer/search/buy`
-
-
-### Body Parameters
-
-Name | Type | Required | Description
---------- | ----------- | ----------- | -----------
-`amount` | <code>number&#124;[number,number]</code> | no | The offer amount or a range to filter for
-`meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | no | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
-`maxPremium` | `number` | no | The maximum premium sell offers should show for
-`minReputation` | `number` | no | The minimum reputation the users need to have (it is a number between `-1` and `1`)
-
-
 
 
 ### Query Parameters

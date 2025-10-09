@@ -130,26 +130,18 @@ curl -X GET https://api.peachbitcoin.com/v1/offers/summary
 Post a new buy offer.
 
 ```shell
-curl -X POST "https://api.peachbitcoin.com/v1/offer/"
--H 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "type": "bid",
-  "amount": [50000, 2330000],
-  "meansOfPayment": {
-    "EUR": ["cash.lv.riga.baltic-honeybadger", "paypal"]
-  },
-  "paymentData": {
-    "cash.lv.riga.baltic-honeybadger": {
-      "hashes": ["2312b8c8bcc4c5e8541893b5e3bc88d165ba83ea6f19fc747a5e1874226c1f08"],
-    },
-    "paypal": {
-      "hashes": ["fda659c82ae97ce2c4b26665e558a97796951f7691f85e97d693425a1eaeae21"]
-    }
-  },
-  "releaseAddress": "bcrt1qlwpcjuude4mlmnvpfhenkwh7rcw06xkcp3d8ds",
-  "messageSignature": "ILVomp0EuVl9vLUoaiV0/Dx0CZS1PHaJ7YOZxqstLfuYTZ6vVIkGYeihnu4oBGAdnrfQAEZ2t0EuZMMF2jxNp5w=",
-  "maxPremium": null
+curl --request POST \
+  --url "https://api.peachbitcoin.com/v069/buyOffer" \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer 5294ed7a-18dd-4ce7-ab9e-3ecda4c54f28' \
+  --data '{
+	"amount": 20000,
+	"meansOfPayment": {"EUR":["wise"]},
+	"paymentData": {"wise":{"hashes":["f94ac0146ae1cb24fecf96063d79fca3d7d71df52afccd7c75e68804b3c57f27"]}},
+	"releaseAddress":"bcrt1qj90g6y20rey56ywthyz8lj9cqq3glyvyu6g66v",
+	"releaseAddressMessageSignature":"AkcwRAIgKcCi+0ZiHJzGCNtnq2UoFpkAbfI0JLMLTnhtgusZLqQCICZvuVGvS6lXKW22wvzmHl4Ndcu2oZtkoPPM0+N+ekQHASECYkq9MFDh+A2hcGRglcSiqyWmsm7KygwmU9QT3KjG8bs=" ,
+	"premium": 2,
+	"minReputation": 4
 }'
 ```
 
@@ -158,52 +150,44 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 
 ```json
 {
-  "amount": [50000, 2330000],
-  "creationDate": "2023-08-22T15:11:14.556Z",
-  "doubleMatched": false,
-  "escrowFee": 0.02,
-  "freeTrade": false,
-  "id": "113",
-  "lastModified": "2023-08-22T15:11:14.556Z",
-  "matches": [],
-  "maxPremium": null,
-  "meansOfPayment": {
-    "EUR": ["cash.lv.riga.baltic-honeybadger", "paypal"]
-  },
-  "message": "I confirm that only I, peach03a73739, control the address bcrt1qlwpcjuude4mlmnvpfhenkwh7rcw06xkcp3d8ds",
-  "messageSignature": "ILVomp0EuVl9vLUoaiV0/Dx0CZS1PHaJ7YOZxqstLfuYTZ6vVIkGYeihnu4oBGAdnrfQAEZ2t0EuZMMF2jxNp5w=",
-  "online": true,
-  "paymentData": {
-    "cash.lv.riga.baltic-honeybadger": {
-      "hashes": ["2312b8c8bcc4c5e8541893b5e3bc88d165ba83ea6f19fc747a5e1874226c1f08"]
-    },
-    "paypal": {
-      "hashes": ["fda659c82ae97ce2c4b26665e558a97796951f7691f85e97d693425a1eaeae21"]
-    }
-  },
-  "publishingDate": null,
-  "releaseAddress": "bcrt1qlwpcjuude4mlmnvpfhenkwh7rcw06xkcp3d8ds",
-  "type": "bid",
-  "user": {
-    "id": "03a73739b3f005fccb3f02ebeb2eae41b5d5c0c7dd3d448a00185c2c07f2b55dd1",
-    ...
-  }
+	"id": 1,
+	"amountSats": 20000,
+	"userId": "03b096a65acbcf4ebe6b9ce5a639216487e3cf4f5d0b2a9b5b6fa05be6888ae738",
+	"status": "active",
+	"releaseAddress": "bcrt1qj90g6y20rey56ywthyz8lj9cqq3glyvyu6g66v",
+	"minReputation": 4,
+	"premium": 2,
+	"freeTrade": false,
+	"releaseAddressMessage": "I confirm that only I, peach03b096a6, control the address bcrt1qj90g6y20rey56ywthyz8lj9cqq3glyvyu6g66v",
+	"paymentData": {
+		"wise": {
+			"hashes": [
+				"f94ac0146ae1cb24fecf96063d79fca3d7d71df52afccd7c75e68804b3c57f27"
+			]
+		}
+	},
+	"meansOfPayment": {
+		"EUR": [
+			"wise"
+		]
+	},
+	"releaseAddressMessageSignature": "AkcwRAIgKcCi+0ZiHJzGCNtnq2UoFpkAbfI0JLMLTnhtgusZLqQCICZvuVGvS6lXKW22wvzmHl4Ndcu2oZtkoPPM0+N+ekQHASECYkq9MFDh+A2hcGRglcSiqyWmsm7KygwmU9QT3KjG8bs=",
+	"creationDate": "2025-07-04T10:06:24.618Z"
 }
 ```
 
 ### HTTP Request
-`POST /v1/offer/`
+`POST /v069/buyOffer/`
 
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-`type` | `string` | yes | `bid`
 `amount` | `[number, number]` | yes | Range within you want to buy sats
-`maxPremium` | `number` | no | The maximum premium you are willing to pay
+`premium` | `number` | no | The premium you are willing to pay
 `meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
 `paymentData`| [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
 `releaseAddress` | `string` | yes | Bitcoin address to release funds to complete trade.
-`messageSignature` | `string` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddress`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
+`releaseAddressMessageSignature` | `string` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddress`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
 
 
 ## Post Sell Offer
@@ -288,11 +272,11 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
 `type` | `string` | yes | `ask`
-`amount` | `number` | yes | The amount in sats you want to sell
-`premium` | `number` | no | The premium you are selling for
+`amount` | `number` | yes | The amount in sats you want to sell or buy
+`premium` | `number` | no | The premium you are selling or buying for
 `meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
 `paymentData` | [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
-`returnAddress` | `string` | yes | Bitcoin address to return funds to in case of a canceled trade.
+`returnAddress` | `string` | yes for sell | Bitcoin address to return funds to in case of a canceled trade.
 
 
 ## Create Escrow

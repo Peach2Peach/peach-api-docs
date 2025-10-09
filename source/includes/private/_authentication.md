@@ -8,6 +8,8 @@ Auth tokens can be acquired by authentication of public keys.
 
 When successfully requesting a token, the public key is automatically registered if it does not exist in the system.
 
+If you want to retrive your existing account info from the file backup, check [this repo](https://github.com/Peach2Peach/decrypt-peach-file-backup).
+
 ## Register or just Get Access Token
 
 Use this endpoint to get auth token by sending public key, challenge and signed message.

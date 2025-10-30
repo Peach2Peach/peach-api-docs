@@ -57,7 +57,7 @@ curl https://api.peachbitcoin.com/v1/info
 ```
 
 ### HTTP Request
-`GET /v1/system/info`
+`GET /v1/info`
 
 
 ## Payment Method Info
@@ -104,4 +104,4 @@ curl https://api.peachbitcoin.com/v1/info/paymentMethods
 ```
 
 ### HTTP Request
-`GET /v1/system/info`
+`GET /v1/info`

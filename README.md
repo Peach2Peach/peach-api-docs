@@ -50,7 +50,7 @@ Rehash rbenv to ensure it recognizes the new Ruby installation. (optional, might
 
 # Build the HTML export with Docker
 ```bash
-docker run --rm -v $(pwd)/build:/app/build api-docs \
+docker run --rm -v $(pwd)/build:/app/build peach-api-docs \
   bundle exec middleman build
 ```
 

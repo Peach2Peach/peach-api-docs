@@ -41,3 +41,17 @@ Rehash rbenv to ensure it recognizes the new Ruby installation. (optional, might
 
 # Bundle API docs
 `bundle exec middleman build`
+
+
+
+# Run with Docker
+`docker build -t peach-api-docs .`
+`docker run -p 4567:4567 peach-api-docs`
+
+# Build the HTML export with Docker
+```bash
+docker run --rm -v $(pwd)/build:/app/build api-docs \
+  bundle exec middleman build
+```
+
+a new `build` folder should appear with the rendered HTML

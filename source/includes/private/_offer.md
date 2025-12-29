@@ -138,8 +138,8 @@ curl --request POST \
 	"amount": 20000,
 	"meansOfPayment": {"EUR":["wise"]},
 	"paymentData": {"wise":{"hashes":["f94ac0146ae1cb24fecf96063d79fca3d7d71df52afccd7c75e68804b3c57f27"]}},
-	"releaseAddress":"bcrt1qj90g6y20rey56ywthyz8lj9cqq3glyvyu6g66v",
-	"releaseAddressMessageSignature":"AkcwRAIgKcCi+0ZiHJzGCNtnq2UoFpkAbfI0JLMLTnhtgusZLqQCICZvuVGvS6lXKW22wvzmHl4Ndcu2oZtkoPPM0+N+ekQHASECYkq9MFDh+A2hcGRglcSiqyWmsm7KygwmU9QT3KjG8bs=" ,
+	"releaseAddresses":["bcrt1qj90g6y20rey56ywthyz8lj9cqq3glyvyu6g66v"],
+	"releaseAddressMessageSignatures":["AkcwRAIgKcCi+0ZiHJzGCNtnq2UoFpkAbfI0JLMLTnhtgusZLqQCICZvuVGvS6lXKW22wvzmHl4Ndcu2oZtkoPPM0+N+ekQHASECYkq9MFDh+A2hcGRglcSiqyWmsm7KygwmU9QT3KjG8bs="],
 	"premium": 2,
 	"minReputation": 4
 }'
@@ -182,12 +182,12 @@ curl --request POST \
 ### Body Parameters
 Name | Type | Required | Description
 --------- | ----------- | ----------- | -----------
-`amount` | `[number, number]` | yes | Range within you want to buy sats
+`amount` | `number` | yes | Amount in sats you want to buy
 `premium` | `number` | no | The premium you are willing to pay
 `meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
 `paymentData`| [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
-`releaseAddress` | `string` | yes | Bitcoin address to release funds to complete trade.
-`releaseAddressMessageSignature` | `string` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddress`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
+`releaseAddresses` | `string[]` | yes | Bitcoin addresses to release funds to complete trade.
+`releaseAddressMessageSignatures` | `string[]` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddresses`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
 
 
 ## Post Sell Offer

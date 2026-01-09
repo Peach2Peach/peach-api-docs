@@ -141,7 +141,12 @@ curl --request POST \
 	"releaseAddresses":["bcrt1qj90g6y20rey56ywthyz8lj9cqq3glyvyu6g66v"],
 	"releaseAddressMessageSignatures":["AkcwRAIgKcCi+0ZiHJzGCNtnq2UoFpkAbfI0JLMLTnhtgusZLqQCICZvuVGvS6lXKW22wvzmHl4Ndcu2oZtkoPPM0+N+ekQHASECYkq9MFDh+A2hcGRglcSiqyWmsm7KygwmU9QT3KjG8bs="],
 	"premium": 2,
-	"minReputation": 4
+	"minReputation": 4,
+  "instantTradeCriteria": {
+    "minReputation": -1,
+    "badges": ["fastTrader", "superTrader", "ambassador"],
+    "minTrades": 0
+  }
 }'
 ```
 
@@ -188,6 +193,7 @@ Name | Type | Required | Description
 `paymentData`| [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
 `releaseAddresses` | `string[]` | yes | Bitcoin addresses to release funds to complete trade.
 `releaseAddressMessageSignatures` | `string[]` | yes | As a buyer you must sign the following message template with the corresponding private keys of your `releaseAddresses`:<br />`I confirm that only I, peach<YOUR_ID>, control the address <RELEASE_ADDRESS>`
+`instantTradeCriteria` | `InstantTradeCriteria` | no | Enables instant trade only when provided as an object. If null (or omitted), the offer is not instant. To enable instant trade without filters, send the default criteria: `{"minReputation":-1,"badges":[],"minTrades":0}`.
 
 
 ## Post Sell Offer
@@ -212,7 +218,12 @@ curl -X POST "https://api.peachbitcoin.com/v1/offer/"
       "hashes": ["fda659c82ae97ce2c4b26665e558a97796951f7691f85e97d693425a1eaeae21"]
     }
   },
-  "returnAddress": "bcrt1qlwpcjuude4mlmnvpfhenkwh7rcw06xkcp3d8ds"
+  "returnAddress": "bcrt1qlwpcjuude4mlmnvpfhenkwh7rcw06xkcp3d8ds",
+  "instantTradeCriteria": {
+    "minReputation": -1,
+    "badges": ["fastTrader", "superTrader", "ambassador"],
+    "minTrades": 0
+  }
 }'
 ```
 
@@ -277,6 +288,7 @@ Name | Type | Required | Description
 `meansOfPayment` | [`MeansOfPayment`](#meansofpayment) | yes | Object with `Currency` as keys and array of [`paymentMethod`](#paymentmethod) ids as values
 `paymentData` | [`OfferPaymentData`](#paymentdata)  | yes | Object with `paymentMethod` ids as keys and object with payment data hashes as values.<br/>Payment data hashes are sha256 hashes and are based on the each original payment data fields. Each field must be hashed individually.
 `returnAddress` | `string` | yes for sell | Bitcoin address to return funds to in case of a canceled trade.
+`instantTradeCriteria` | `InstantTradeCriteria` | no | Enables instant trade only when provided as an object. If null (or omitted), the offer is not instant. To enable instant trade without filters, send the default criteria: `{"minReputation":-1,"badges":[],"minTrades":0}`.
 
 
 ## Create Escrow
